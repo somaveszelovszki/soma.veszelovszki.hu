@@ -1,2 +1,1 @@
-# soma.veszelovszki.hu
-My profile page
+My profile page with some useful information about me
