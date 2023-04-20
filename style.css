@@ -60,11 +60,7 @@ body {
 }
 
 .animated-width {
+    width: 0%;
     -webkit-transition: width 2.5s ease;
     transition: width 2.5s ease;
-}
-
-#enthusiasm-progress {
-    position: relative;
-    width: 0%;
 }
