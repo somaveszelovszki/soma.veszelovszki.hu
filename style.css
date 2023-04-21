@@ -63,6 +63,12 @@ body {
     margin-right: 5px;
 }
 
+.joke>p {
+    white-space: pre-wrap;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
 .hoverable:hover {
     background-color: #BCAAA4;
     cursor: pointer;

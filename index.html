@@ -17,8 +17,6 @@
     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
     crossorigin="anonymous"></script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-
   <script src="index.js"></script>
 </head>
 
@@ -34,8 +32,10 @@
         </ol>
       </nav>
       <div class="row gutters-sm">
+
+        <!-- Left column -->
         <div class="col-lg-4">
-          <div class="row">
+          <div class="row gutters-sm">
 
             <!-- Profile -->
             <div class="col-12">
@@ -118,8 +118,11 @@
 
           </div>
         </div>
+
+
+        <!-- Right column -->
         <div class="col-lg-8">
-          <div class="row">
+          <div class="row gutters-sm">
 
             <!-- About me -->
             <div class="col-12">
@@ -175,30 +178,42 @@
               </div>
             </div>
 
+          </div>
+          <div class="row gutters-sm">
+
             <!-- Qualities -->
-            <div class="col-12">
-              <div class="row gutters-sm">
-                <div class="col-lg-6 mb-3">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="d-flex align-items-center mb-3 card-title">Qualities</h5>
-                      <small>C++</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary animated-width" role="progressbar" data-target="90"></div>
-                      </div>
-                      <small>Backend programming</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary animated-width" role="progressbar" data-target="70"></div>
-                      </div>
-                      <small>Enthusiasm</small>
-                      <div class="progress mb-3 animated-width" style="width: relative; height: 5px" data-target="120">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 100%"></div>
-                      </div>
-                      <small>Communication skills</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary animated-width" role="progressbar" data-target="85"></div>
-                      </div>
-                    </div>
+            <div class="col-lg-6 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="d-flex align-items-center mb-3 card-title">Qualities</h5>
+                  <small>C++</small>
+                  <div class="progress mb-3" style="height: 5px">
+                    <div class="progress-bar bg-primary animated-width" role="progressbar" data-target="90"></div>
+                  </div>
+                  <small>Backend programming</small>
+                  <div class="progress mb-3" style="height: 5px">
+                    <div class="progress-bar bg-primary animated-width" role="progressbar" data-target="70"></div>
+                  </div>
+                  <small>Enthusiasm</small>
+                  <div class="progress mb-3 animated-width" style="width: relative; height: 5px" data-target="120">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 100%"></div>
+                  </div>
+                  <small>Communication skills</small>
+                  <div class="progress mb-3" style="height: 5px">
+                    <div class="progress-bar bg-primary animated-width" role="progressbar" data-target="85"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Random joke -->
+            <div class="col-lg-6 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="d-flex align-items-center mb-3 card-title">Random joke</h5>
+                  <div class="joke">
+                    <p><small class="setup" style="font-weight: bold"></small></p>
+                    <p><small class="delivery"></small></p>
                   </div>
                 </div>
               </div>
@@ -208,6 +223,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </body>
 
