@@ -1,8 +1,8 @@
 body {
     margin-top: 20px;
-    color: #1a202c;
+    color: #1A202C;
     text-align: left;
-    background-color: #bcaaa4;
+    background-color: #BCAAA4;
 }
 
 .main-body {
@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     background-clip: border-box;
     border: 0 solid rgba(0, 0, 0, .125);
     border-radius: .50rem;
@@ -49,12 +49,22 @@ body {
     transition: width 2.5s ease;
 }
 
+.card-title {
+    color: #5D4037;
+}
+
 .contact-list-group-item {
     padding: 0.5rem !important;
 }
 
-.contact-pictogram {
+.inline-pictogram {
     position: relative;
     top: -2px;
     margin-right: 5px;
+}
+
+.hoverable:hover {
+    background-color: #BCAAA4;
+    cursor: pointer;
+    transition: 0.3s;
 }
