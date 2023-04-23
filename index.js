@@ -13,7 +13,7 @@ $(document).ready (function() {
     })
 
     $('.joke').each(function() {
-        fetch("https://v2.jokeapi.dev/joke/any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=twopart")
+        fetch("https://v2.jokeapi.dev/joke/programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=twopart")
             .then((info) => info.json())
             .then((item) => {
                 $(this).find('.setup').text(item.setup)
