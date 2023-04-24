@@ -7,6 +7,10 @@ $(document).ready (function() {
         window.location.href = $(this).data("link");
     })
 
+    $('[data-link-new]').click(function() {
+        window.open($(this).data("link-new"), '_blank').focus();
+    })
+
     $('[data-calculate-years-since]').each(function() {
         let elapsedTime = new Date(new Date() - Date.parse($(this).data('calculate-years-since')))
         $(this).text(Math.abs(elapsedTime.getUTCFullYear() - 1970));
