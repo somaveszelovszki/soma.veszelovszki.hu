@@ -9,6 +9,25 @@ body {
     padding: 15px;
 }
 
+.animated-width {
+    width: 0%;
+    -webkit-transition: width 2.5s ease;
+    transition: width 2.5s ease;
+}
+
+button {
+    position: relative;
+    padding: 4px 8px;
+    background-color: #4CAF50;
+    border: 2px solid #4CAF50;
+    border-radius: .25rem;
+}
+
+button:hover {
+    box-shadow: 0px 0px 2px 2px #000000;
+    transition: 0.3s;
+}
+
 .card {
     position: relative;
     display: flex;
@@ -28,6 +47,19 @@ body {
     padding: 1rem;
 }
 
+.card-title {
+    color: #5D4037;
+}
+
+.contact-list-group-item {
+    padding: 0.5rem !important;
+}
+
+button>img {
+    height: 24px;
+    margin: 4px;
+}
+
 .gutters-sm {
     margin-right: -8px;
     margin-left: -8px;
@@ -39,22 +71,10 @@ body {
     padding-left: 8px;
 }
 
-.shadow-none {
-    box-shadow: none !important;
-}
-
-.animated-width {
-    width: 0%;
-    -webkit-transition: width 2.5s ease;
-    transition: width 2.5s ease;
-}
-
-.card-title {
-    color: #5D4037;
-}
-
-.contact-list-group-item {
-    padding: 0.5rem !important;
+.hoverable:hover {
+    background-color: #BCAAA4;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .inline-pictogram {
@@ -67,10 +87,4 @@ body {
     white-space: pre-wrap;
     text-align: justify;
     margin-bottom: 0;
-}
-
-.hoverable:hover {
-    background-color: #BCAAA4;
-    cursor: pointer;
-    transition: 0.3s;
 }

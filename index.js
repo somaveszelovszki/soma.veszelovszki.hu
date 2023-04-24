@@ -12,6 +12,16 @@ $(document).ready (function() {
         $(this).text(Math.abs(elapsedTime.getUTCFullYear() - 1970));
     })
 
+    $('[data-markdown-src]').each(function() {
+        let view = $(this)
+        $.ajax({
+            url: view.data("markdown-src"),
+            success: function (text){
+                view.html(new showdown.Converter().makeHtml(text))
+            }
+          });
+    })
+
     $('.joke').each(function() {
         fetch("https://v2.jokeapi.dev/joke/programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=twopart")
             .then((info) => info.json())
