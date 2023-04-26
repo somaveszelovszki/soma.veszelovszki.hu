@@ -3,10 +3,128 @@
 
 <head>
   <title>babocar</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+
+  <script src="../index.js"></script>
 </head>
 
 <body>
-  Coming soon...
+  <div class="container">
+    <div class="main-body">
+      <div class="row gutters-sm">
+
+        <!-- Top bar -->
+        <div class="col-12">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <button type="button" class="unfilled" data-link="../index.html"><img
+                    src="../resources/navigate-back-profile.png" /></button>
+                <button type="button" data-link-new="../resources/cv.pdf"><img
+                    src="../resources/download-cv.png" /></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left column -->
+        <div class="col-lg-4">
+          <div class="row gutters-sm">
+
+            <!-- Profile -->
+            <div class="col-12">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="../resources/babocar-profile.jpg" alt="Project picture" class="rounded-circle shadow"
+                      width="180">
+                    <div class="mt-3">
+                      <h4>babocar</h4>
+                      <button type="button" data-link-new="https://github.com/somaveszelovszki/babocar">
+                        <img src="../resources/view-on-github.png" /></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video -->
+            <div class="col-12">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <iframe width="100%" style="aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/wYXTI0n2l1o"
+                    allowfullscreen>
+                  </iframe>
+                  <span class="text-secondary">
+                    <small>The car breaking the lap record at the RobonAUT race in 2021</small>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="col-lg-8">
+          <div class="row gutters-sm">
+
+            <!-- About -->
+            <div class="col-12">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="d-flex align-items-center mb-3 card-title">About</h5>
+                  <p>
+                    babocar is a collection of circuits designs, custom 3D-printed elements, embedded firmware and
+                    debugging tools for a model car that is able to perform driving tasks such as following guiding
+                    lines and pre-defined routes. The system is distributed amongst multiple circuits and
+                    microcontrollers which communicate over a <a href="https://en.wikipedia.org/wiki/CAN_bus">CAN</a>
+                    bus.
+                  </p>
+                  <p style="text-align: center;">
+                    <img width="400px" class="rounded" alt="Firmware and hardware components"
+                      src="https://raw.githubusercontent.com/somaveszelovszki/babocar/master/docs/firmware_model.png" />
+                  </p>
+                  <p>
+                    The low-level motor controller unit is responsible for ramping the drive motor speed and the
+                    front and rear steering servo positions to the target values, and broadcasting the car's actual
+                    speed and steering information to the other units.
+                  </p>
+                  <p>
+                    The high-level control panel is responsible for navigating the car along a target trajectory, by
+                    sending the target speed and steering commands to the motor controller. The source of the trajectory
+                    can be
+                  <ul>
+                    <li>a predefined trajectory</li>
+                    <li>a high-level trajectory planner unit</li>
+                    <li>guiding lines on the floor, detected by the dedicated circuits on the front and the back</li>
+                  </ul>
+                  </p>
+                  <img width="100%" class="rounded"
+                    src="https://raw.githubusercontent.com/somaveszelovszki/babocar/master/docs/babocar.jpg" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 </body>
 
 </html>
