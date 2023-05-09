@@ -1,6 +1,10 @@
 $(document).ready (function() {
     $(".animated-width").each(function() {
-        $(this).css("width", $(this).data("target") + "%")
+        $(this).css("width", $(this).data("target-width"))
+    });
+
+    $(".animated-height").each(function() {
+        $(this).css("height", $(this).data("target-height"))
     });
 
     $('[data-link]').click(function() {

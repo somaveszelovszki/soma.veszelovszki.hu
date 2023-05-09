@@ -9,8 +9,12 @@ body {
     padding: 15px;
 }
 
+.animated-height {
+    -webkit-transition: height 2.5s ease;
+    transition: height 2.5s ease;
+}
+
 .animated-width {
-    width: 0%;
     -webkit-transition: width 2.5s ease;
     transition: width 2.5s ease;
 }
@@ -19,6 +23,26 @@ button {
     background-color: #4CAF50;
     border: 2px solid #4CAF50;
     border-radius: .25rem;
+}
+
+button.animated-highlight {
+    animation: highligh-button-animation 500ms infinite;
+    animation-delay: 4s;
+    animation-iteration-count: 3;
+}
+
+@keyframes highligh-button-animation {
+    0% {
+        background-color: #4CAF50;
+    }
+
+    50% {
+        background-color: #FFFFFF;
+    }
+
+    100% {
+        background-color: #4CAF50;
+    }
 }
 
 button.unfilled {
