@@ -2,7 +2,8 @@ body {
     margin-top: 20px;
     color: #1A202C;
     text-align: left;
-    background-color: #BCAAA4;
+    background-color: #750B0B;
+    background-image: url("resources/brick-wall.png");
 }
 
 .main-body {
