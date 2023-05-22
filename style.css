@@ -31,20 +31,6 @@ button.animated-highlight {
     animation-iteration-count: 3;
 }
 
-@keyframes highligh-button-animation {
-    0% {
-        background-color: #4CAF50;
-    }
-
-    50% {
-        background-color: #FFFFFF;
-    }
-
-    100% {
-        background-color: #4CAF50;
-    }
-}
-
 button.unfilled {
     background-color: #FFFFFF;
 }
@@ -97,6 +83,25 @@ button>img {
     padding-left: 8px;
 }
 
+@keyframes highligh-button-animation {
+    0% {
+        background-color: #4CAF50;
+    }
+
+    50% {
+        background-color: #FFFFFF;
+    }
+
+    100% {
+        background-color: #4CAF50;
+    }
+}
+
+.progress-bar {
+    border-radius: 5px;
+    background: #0000FF;
+}
+
 .project-list-item {
     padding: 0.5rem !important;
 }
@@ -120,4 +125,29 @@ button>img {
     white-space: pre-wrap;
     text-align: justify;
     margin-bottom: 0;
+}
+
+.stickman {
+    position: absolute;
+    top: 2px;
+    right: -20px;
+    animation: stickman-swing 2s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes stickman-swing {
+    0% {
+        transform-origin: 30% 5%;
+        transform: rotate(30deg);
+    }
+
+    50% {
+        transform-origin: 30% 5%;
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform-origin: 30% 5%;
+        transform: rotate(30deg);
+    }
 }
