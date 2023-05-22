@@ -10,6 +10,11 @@ body {
     padding: 15px;
 }
 
+.animated-rotation {
+    -webkit-transition: height 2.5s ease;
+    transition: height 2.5s ease;
+}
+
 .animated-height {
     -webkit-transition: height 2.5s ease;
     transition: height 2.5s ease;
@@ -96,6 +101,59 @@ button>img {
     100% {
         background-color: #4CAF50;
     }
+}
+
+.letter-tile {
+    display: inline-block;
+    margin: 5px;
+    width: 60px;
+    height: 60px;
+    line-height: 55px;
+    border-radius: .5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: move;
+    transition: transform 1s;
+}
+
+.letter-tile.animated-rotation {
+    transform: rotate(360deg);
+}
+
+#letter-tile-m {
+    background-color: black;
+    color: white;
+}
+
+#letter-tile-o {
+    background-color: yellow;
+    color: black;
+}
+
+#letter-tile-n,
+#letter-tile-n2 {
+    background-color: blue;
+    color: white;
+}
+
+#letter-tile-d {
+    background-color: red;
+    color: black;
+}
+
+#letter-tile-r {
+    background-color: yellow;
+    color: black;
+}
+
+#letter-tile-i {
+    background-color: black;
+    color: white;
+}
+
+#letter-tile-a {
+    background-color: red;
+    color: black;
 }
 
 .progress-bar {

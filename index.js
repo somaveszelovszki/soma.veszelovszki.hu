@@ -38,4 +38,25 @@ $(document).ready(function () {
                 $(this).find('.delivery').text(item.delivery)
             });
     })
+
+    $('.draggable').draggable();
+
+    $('.letter-tile').mouseup(function (e) {
+        const m = $('#letter-tile-m').position().left;
+        const o = $('#letter-tile-o').position().left;
+        const n = $('#letter-tile-n').position().left;
+        const d = $('#letter-tile-d').position().left;
+        const r = $('#letter-tile-r').position().left;
+        const i = $('#letter-tile-i').position().left;
+        const a = $('#letter-tile-a').position().left;
+        const n2 = $('#letter-tile-n2').position().left;
+
+        const positions = [i, Math.min(n, n2), r, a, Math.max(n, n2), d, o, m];
+        const sorted = [...positions].sort((a, b) => a - b)
+
+        if (positions.every((pos, i) => pos == sorted[i])) {
+            $('.letter-tile').addClass('animated-rotation')
+        }
+    });
+
 });
