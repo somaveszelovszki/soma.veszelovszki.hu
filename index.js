@@ -58,5 +58,4 @@ $(document).ready(function () {
             $('.letter-tile').addClass('animated-rotation')
         }
     });
-
 });

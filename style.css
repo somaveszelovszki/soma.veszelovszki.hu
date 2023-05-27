@@ -103,6 +103,23 @@ button>img {
     }
 }
 
+.hover-pointer:hover {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.inline-pictogram {
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+}
+
+.joke>p {
+    white-space: pre-wrap;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
 .letter-tile {
     display: inline-block;
     margin: 5px;
@@ -167,23 +184,6 @@ button>img {
 
 .project-list-item:hover {
     background-color: #BCAAA4;
-}
-
-.hover-pointer:hover {
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.inline-pictogram {
-    position: relative;
-    top: -2px;
-    margin-right: 5px;
-}
-
-.joke>p {
-    white-space: pre-wrap;
-    text-align: justify;
-    margin-bottom: 0;
 }
 
 .stickman {
