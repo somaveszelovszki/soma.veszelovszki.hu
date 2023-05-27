@@ -173,6 +173,10 @@ button>img {
     color: black;
 }
 
+p {
+    text-align: justify;
+}
+
 .progress-bar {
     border-radius: 5px;
     background: #0000FF;
