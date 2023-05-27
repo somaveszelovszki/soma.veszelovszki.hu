@@ -55,7 +55,34 @@ $(document).ready(function () {
         const sorted = [...positions].sort((a, b) => a - b)
 
         if (positions.every((pos, i) => pos == sorted[i])) {
-            $('.letter-tile').addClass('animated-rotation')
+            $('.letter-tile').animate(
+                { deg: 360 },
+                {
+                    duration: 500,
+                    easing: 'linear',
+                    step: function (now) {
+                        let rotation = `rotate(${now}deg)`
+                        $(this).css('-webkit-transform', rotation);
+                        $(this).css('-moz-transform', rotation);
+                        $(this).css('transform', rotation);
+                    }
+                }
+            );
+
+            const marginLeft = parseInt($('#letter-tile-m').css("marginLeft").replace('px', ''));
+            const marginRight = parseInt($('#letter-tile-m').css("marginRight").replace('px', ''));
+            const width = $('#letter-tile-m').width();
+
+            const pos = (before, after) => ((after >= 2 ? after + 0.5 : after) - before) * (width + marginLeft + marginRight);
+
+            $('#letter-tile-i').animate({ left: pos(5, 0), top: 0 }, 1000);
+            $('#letter-tile-n').animate({ left: pos(2, 1), top: 0 }, 1000);
+            $('#letter-tile-r').animate({ left: pos(4, 2), top: 0 }, 1000);
+            $('#letter-tile-a').animate({ left: pos(6, 3), top: 0 }, 1000);
+            $('#letter-tile-n2').animate({ left: pos(7, 4), top: 0 }, 1000);
+            $('#letter-tile-d').animate({ left: pos(3, 5), top: 0 }, 1000);
+            $('#letter-tile-o').animate({ left: pos(1, 6), top: 0 }, 1000);
+            $('#letter-tile-m').animate({ left: pos(0, 7), top: 0 }, 1000);
         }
     });
 });
