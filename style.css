@@ -6,25 +6,6 @@ body {
     background-image: url("resources/brick-wall.png");
 }
 
-.main-body {
-    padding: 15px;
-}
-
-.animated-rotation {
-    -webkit-transition: height 2.5s ease;
-    transition: height 2.5s ease;
-}
-
-.animated-height {
-    -webkit-transition: height 2.5s ease;
-    transition: height 2.5s ease;
-}
-
-.animated-width {
-    -webkit-transition: width 2.5s ease;
-    transition: width 2.5s ease;
-}
-
 button {
     background-color: #4CAF50;
     border: 2px solid #4CAF50;
@@ -49,6 +30,24 @@ button:hover {
 button>img {
     height: 22px;
     margin: 2px;
+}
+
+p {
+    text-align: justify;
+}
+
+.main-body {
+    padding: 15px;
+}
+
+.animated-height {
+    -webkit-transition: height 2.5s ease;
+    transition: height 2.5s ease;
+}
+
+.animated-width {
+    -webkit-transition: width 2.5s ease;
+    transition: width 2.5s ease;
 }
 
 .card {
@@ -89,20 +88,6 @@ button>img {
     padding-left: 8px;
 }
 
-@keyframes highligh-button-animation {
-    0% {
-        background-color: #4CAF50;
-    }
-
-    50% {
-        background-color: #FFFFFF;
-    }
-
-    100% {
-        background-color: #4CAF50;
-    }
-}
-
 .hover-pointer:hover {
     cursor: pointer;
     transition: 0.3s;
@@ -121,20 +106,44 @@ button>img {
 }
 
 .letter-tile {
-    display: inline-block;
-    margin: 5px;
-    width: 60px;
-    height: 60px;
-    line-height: 55px;
+    float: left;
+    margin: 1%;
+    width: 10%;
+    height: 0;
+    padding-bottom: 10%;
     border-radius: .5rem;
     text-align: center;
     font-size: 1.5rem;
     cursor: move;
-    transition: transform 1s;
+    align-items: stretch;
 }
 
-.letter-tile.animated-rotation {
-    transform: rotate(360deg);
+.letter-tile div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.progress-bar {
+    border-radius: 5px;
+    background: #0000FF;
+}
+
+.project-list-item {
+    padding: 0.5rem !important;
+}
+
+.project-list-item:hover {
+    background-color: #BCAAA4;
+}
+
+.stickman {
+    position: absolute;
+    top: 2px;
+    right: -20px;
+    animation: stickman-swing 2s infinite;
+    animation-timing-function: linear;
 }
 
 #letter-tile-m {
@@ -173,29 +182,18 @@ button>img {
     color: black;
 }
 
-p {
-    text-align: justify;
-}
+@keyframes highligh-button-animation {
+    0% {
+        background-color: #4CAF50;
+    }
 
-.progress-bar {
-    border-radius: 5px;
-    background: #0000FF;
-}
+    50% {
+        background-color: #FFFFFF;
+    }
 
-.project-list-item {
-    padding: 0.5rem !important;
-}
-
-.project-list-item:hover {
-    background-color: #BCAAA4;
-}
-
-.stickman {
-    position: absolute;
-    top: 2px;
-    right: -20px;
-    animation: stickman-swing 2s infinite;
-    animation-timing-function: linear;
+    100% {
+        background-color: #4CAF50;
+    }
 }
 
 @keyframes stickman-swing {
