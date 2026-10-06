@@ -5,246 +5,81 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>babocar · Soma Veszelovszki</title>
-  <meta name="description"
-    content="babocar: the hardware, firmware and tooling for a self-driving model car that holds the all-time lap record at the RobonAUT race.">
-  <meta property="og:title" content="babocar · Soma Veszelovszki">
-  <meta property="og:description" content="The hardware, firmware and tooling for a self-driving model car.">
+  <meta name="description" content="A self-driving model car: circuit boards, STM32 firmware and a web dashboard.">
   <meta property="og:image" content="https://soma.veszelovszki.hu/resources/img/babocar-car.jpg">
-  <meta name="theme-color" content="#f8f8f6">
   <link rel="icon" href="../resources/favicon.svg" type="image/svg+xml">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="../style.css">
   <script src="../index.js" defer></script>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="../" aria-label="Soma Veszelovszki, home">
-        <span class="brand-mark">SV</span>
-        <span class="brand-name">Soma Veszelovszki</span>
-      </a>
-      <nav class="nav" aria-label="Main">
-        <a href="../#experience" class="nav-hide-sm">Experience</a>
-        <a href="../#projects">Projects</a>
-        <a href="../#contact">Contact</a>
-        <a class="btn btn-sm" href="../resources/SomaVeszelovszki_resume.pdf" target="_blank" rel="noopener">Resume</a>
-      </nav>
-    </div>
-  </header>
+  <main class="page">
+    <a class="back" href="../">← Soma Veszelovszki</a>
 
-  <main>
-    <section class="project-hero">
-      <div class="container">
-        <a class="back-link" href="../#projects">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" aria-hidden="true">
-            <path d="m12 19-7-7 7-7" />
-            <path d="M19 12H5" />
-          </svg>
-          All projects
-        </a>
-        <span class="badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-            <path d="M4 22h16" />
-            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
-            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
-            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
-          </svg>
-          All-time RobonAUT lap record
-        </span>
-        <h1>babocar</h1>
-        <p class="lede">
-          The hardware and software for a self-driving model car: circuit boards, 3D-printed parts, real-time
-          firmware spread across several microcontrollers, and a web dashboard for testing and debugging. Every part
-          of it was designed and built by hand.
-        </p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="https://github.com/somaveszelovszki/babocar" target="_blank" rel="noopener">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-              <path
-                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-            </svg>
-            View on GitHub
-          </a>
-          <a class="btn" href="https://github.com/somaveszelovszki/babocar-monitor" target="_blank"
-            rel="noopener">Monitor app source</a>
-        </div>
-
-        <dl class="facts">
-          <div class="fact">
-            <dt>Built for</dt>
-            <dd>RobonAUT autonomous car race</dd>
-          </div>
-          <div class="fact">
-            <dt>Timeline</dt>
-            <dd>2019 – 2021</dd>
-          </div>
-          <div class="fact">
-            <dt>Firmware</dt>
-            <dd>C++17, FreeRTOS, STM32</dd>
-          </div>
-          <div class="fact">
-            <dt>Tooling</dt>
-            <dd>Node.js, React, MQTT</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <figure class="cover">
-      <button class="video" type="button" data-youtube-id="wYXTI0n2l1o"
-        aria-label="Play video: babocar breaking the lap record at RobonAUT 2021">
-        <img src="../resources/img/babocar-video-poster.jpg" alt="" width="1280" height="720">
-        <span class="play" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.8-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z" />
-          </svg>
-        </span>
-      </button>
-      <figcaption>The car breaking the lap record at RobonAUT 2021</figcaption>
-    </figure>
-
-    <article class="article">
-      <h2>Overview</h2>
-      <p>
-        babocar is a complete, self-built autonomous model car. It can follow guide lines on the floor, drive
-        predefined routes, find its way through a line maze, and run a high-speed race track that includes overtaking
-        and lane changes. It set the <strong>all-time lap record</strong> at RobonAUT, the autonomous model car race
-        held at the Budapest University of Technology and Economics.
-      </p>
-      <p>The project covers the whole stack:</p>
-      <ul class="list">
-        <li><strong>Circuit design:</strong> schematics and PCB layouts in Altium Designer for the control panel,
-          motor controller, line detectors, distance sensor adapters and an RS422 adapter.</li>
-        <li><strong>Mechanical design:</strong> 3D-printed parts modelled in SketchUp and Autodesk Fusion 360.</li>
-        <li><strong>Embedded firmware:</strong> separate C++ projects for each microcontroller, built on FreeRTOS
-          and a shared, unit-tested utility library.</li>
-        <li><strong>Tooling:</strong> a monitoring and debugging application that runs on a Raspberry Pi on the
-          car.</li>
+    <article>
+      <h1 class="project-title">babocar</h1>
+      <p class="subtitle">A self-driving model car, 2019 – 2021</p>
+      <ul class="links">
+        <li><a href="https://github.com/somaveszelovszki/babocar">GitHub</a></li>
+        <li><a href="https://github.com/somaveszelovszki/babocar-monitor">Monitor app</a></li>
       </ul>
 
-      <h2>Distributed architecture</h2>
       <p>
-        The system is split across several circuits and microcontrollers that communicate over a
-        <a href="https://en.wikipedia.org/wiki/CAN_bus" target="_blank" rel="noopener">CAN bus</a>. Each unit has a
-        single responsibility, so it can be developed, tested and replaced on its own.
+        I designed and built everything on this car: the circuit boards, the 3D-printed parts, the firmware and the
+        debugging tools. It follows lines on the floor, finds its way through a line maze and overtakes on a race
+        track. It holds the all-time lap record at RobonAUT, the autonomous model car race at the Budapest University
+        of Technology and Economics.
       </p>
-      <figure class="figure diagram">
-        <img src="../resources/img/babocar-architecture.png"
-          alt="Architecture diagram: monitor app on a Raspberry Pi 4, control panel, front and rear line detectors, distance sensors and motor controller on STM32 microcontrollers, driving the steering servos and drive motor"
+
+      <figure>
+        <button class="video" type="button" data-youtube-id="wYXTI0n2l1o" aria-label="Play the lap record video">
+          <img src="../resources/img/babocar-video-poster.jpg" alt="" width="1280" height="720">
+          <span class="play" aria-hidden="true"></span>
+        </button>
+        <figcaption>The lap record run at RobonAUT 2021.</figcaption>
+      </figure>
+
+      <h2>How it works</h2>
+      <p>
+        The work is split across several STM32 microcontrollers running FreeRTOS, which talk to each other over a
+        <a href="https://en.wikipedia.org/wiki/CAN_bus">CAN bus</a>:
+      </p>
+      <ul>
+        <li>The <strong>motor controller</strong> ramps the drive motor and the front and rear steering servos to
+          their targets, and reports actual speed and steering.</li>
+        <li>The <strong>control panel</strong> steers the car along a trajectory: a predefined route, a planner's
+          output, or the lines on the floor. It also runs the maze solver and the race track maneuvers.</li>
+        <li>Front and rear <strong>line detectors</strong> and <strong>distance sensors</strong> feed it what the car
+          sees.</li>
+      </ul>
+      <figure class="diagram">
+        <img src="../resources/img/babocar-architecture.png" alt="Diagram of the car's control units and how they connect"
           width="538" height="439" loading="lazy">
-        <figcaption>Hardware and firmware units, and how they connect</figcaption>
+      </figure>
+      <p>
+        Shared code lives in <a href="../micro-utils/">micro-utils</a>. Its hardware abstraction layer has mock
+        implementations, so the firmware logic is unit-tested on a laptop rather than on the car.
+      </p>
+
+      <h2>Monitoring</h2>
+      <p>
+        A Raspberry Pi on the car runs Node.js services connected through MQTT, with a React UI for watching the
+        car's position, speed and logs and for tuning parameters live. Test drives can be recorded and replayed.
+      </p>
+      <figure>
+        <img src="../resources/img/babocar-monitor.jpg" alt="The monitor app: car state, parameter editor, map and logs"
+          width="1600" height="828" loading="lazy">
       </figure>
 
-      <h3>Motor controller</h3>
       <p>
-        The low-level <strong>motor controller</strong> ramps the drive motor's speed and the front and rear
-        steering servos to their target positions. It reads a speed sensor and an RC receiver, and broadcasts the
-        car's actual speed and steering to the other units.
+        The repository also holds my MSc thesis,
+        <a href="https://github.com/somaveszelovszki/babocar/blob/master/docs/thesis/thesis.pdf"><em>Development of
+            Navigation Methods in Dynamic Environment for an Intelligent Model Car</em></a>.
       </p>
-
-      <h3>Control panel</h3>
-      <p>
-        The high-level <strong>control panel</strong> drives the car along a target trajectory by sending speed and
-        steering commands to the motor controller. Its FreeRTOS tasks handle control, line detection, distance
-        sensing, debugging and the two race programs. The trajectory can come from:
-      </p>
-      <ul class="list">
-        <li>a predefined route</li>
-        <li>a higher-level trajectory planner</li>
-        <li>guide lines on the floor, picked up by dedicated detector boards at the front and the back</li>
-      </ul>
-      <p>
-        For the maze stage, the firmware models the course as a graph and plans routes through it. On the race track,
-        it runs a set of maneuvers: lane changes, overtaking and turning around.
-      </p>
-
-      <h3>Line detectors and distance sensors</h3>
-      <p>
-        The front and rear <strong>line detectors</strong> filter raw sensor readings and work out line positions
-        and line patterns. They have unit tests and benchmarks. Separate <strong>time-of-flight sensor
-          adapters</strong> report the distance to obstacles ahead of and behind the car.
-      </p>
-
-      <figure class="figure">
-        <img src="../resources/img/babocar-chassis.jpg"
-          alt="The babocar chassis without its body, showing the circuit boards, Raspberry Pi and four-wheel steering"
-          width="1600" height="1200" loading="lazy">
-        <figcaption>The chassis with the body removed: control electronics, a Raspberry Pi and four-wheel steering
-        </figcaption>
-      </figure>
-
-      <h2>Monitoring application</h2>
-      <p>
-        The <strong>monitor app</strong> makes testing and debugging easier with a clear interface for viewing and
-        changing the car's key parameters while it drives. It runs on the Raspberry Pi on the car, as a set of
-        <strong>Node.js</strong> services that communicate through an <strong>MQTT</strong> broker:
-      </p>
-      <ul class="list">
-        <li>a <strong>serial connector</strong> that passes messages between the car's control unit and the broker</li>
-        <li>a <strong>React</strong> web client that shows the car's position, speed, map and logs, and lets you edit
-          firmware parameters such as controller gains</li>
-        <li>a <strong>feed recorder</strong> and a <strong>readback connector</strong>, so recorded test drives can be
-          replayed later</li>
-        <li>a <strong>simulator</strong> that stands in for a moving car while the UI is being developed</li>
-      </ul>
-      <figure class="figure">
-        <img src="../resources/img/babocar-monitor.jpg"
-          alt="Monitor app UI with car state, a parameter editor, a live map and color-coded logs" width="1600"
-          height="828" loading="lazy">
-        <figcaption>The monitor app: car state, parameter editor, live map and logs</figcaption>
-      </figure>
-
-      <h2>Engineering practices</h2>
-      <p>
-        Hardware-independent firmware logic is built and unit-tested on the development machine. A single script
-        builds the tests for the shared library and every firmware project, using the build platform as the target.
-        Hardware access goes through the
-        <a href="../micro-utils/">micro-utils</a> abstraction layer, which has FreeRTOS, STM32 HAL and mock
-        implementations. That's what makes it possible to test control logic without a car.
-      </p>
-
-      <div class="callout">
-        <p>
-          The repository also includes my MSc thesis, <em>Development of Navigation Methods in Dynamic Environment
-            for an Intelligent Model Car</em>. It covers a mapping method that separates static obstacles from moving
-          ones, and local obstacle avoidance built on top of it.
-          <a href="https://github.com/somaveszelovszki/babocar/blob/master/docs/thesis/thesis.pdf" target="_blank"
-            rel="noopener">Read the thesis (PDF) ↗</a>
-        </p>
-      </div>
-
-      <a class="next-project" href="../micro-utils/">
-        <span>
-          <small>Next project</small>
-          <strong>micro-utils</strong>
-        </span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" aria-hidden="true">
-          <path d="M5 12h14" />
-          <path d="m12 5 7 7-7 7" />
-        </svg>
-      </a>
     </article>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <span>© <span data-current-year>2026</span> Soma Veszelovszki</span>
-      <span class="footer-links">
-        <a href="../">Home</a>
-        <a href="../#contact">Contact</a>
-      </span>
-    </div>
-  </footer>
+    <footer>© <span data-current-year>2026</span> Soma Veszelovszki</footer>
+  </main>
 </body>
 
 </html>

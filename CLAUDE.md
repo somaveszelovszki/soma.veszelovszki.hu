@@ -10,20 +10,20 @@ There is no build system, package manager, linter, or test suite — it is plain
 
 ## Structure
 
-- `index.html` — the single-page profile: hero, about + skills, experience, projects, contact.
-- One directory per project case study (`babocar/`, `micro-utils/`, `mondrian-in-random/`), each with its own `index.html`. `mondrian-in-random/privacy-policy.html` is the app's store privacy policy — its legal text must not be reworded.
+- `index.html` — the profile: intro + contact links, About, Experience, Projects.
+- One directory per project (`babocar/`, `micro-utils/`, `mondrian-in-random/`), each with its own `index.html`. `mondrian-in-random/privacy-policy.html` is the app's store privacy policy — its legal text must not be reworded.
 - `style.css` and `index.js` at the root are shared by every page; subpages reference them (and `resources/`) via `../` relative paths.
-- `resources/img/` holds locally hosted, resized images (don't hotlink GitHub raw files); `resources/SomaVeszelovszki_resume.pdf` is the resume linked from every page.
+- `resources/img/` holds locally hosted, resized images (don't hotlink GitHub raw files); `resources/SomaVeszelovszki_resume.pdf` is linked from the home page.
 
 ## Content sources
 
-Experience, dates and skills mirror the resume PDF; project descriptions are drawn from the corresponding GitHub repos (`github.com/somaveszelovszki/*`). Keep claims consistent with those sources.
+Experience and dates mirror the resume PDF; project descriptions are drawn from the corresponding GitHub repos (`github.com/somaveszelovszki/*`). The About text on the home page is the owner's own wording — don't rewrite it.
 
-## Page conventions
+## Design conventions
 
-- Every page repeats the same `<head>` (Inter + JetBrains Mono from Google Fonts, `style.css`, deferred `index.js`, SVG favicon) and the same sticky `.site-header`. To add a project page, copy an existing subpage (`project-hero`, `.facts`, `.cover`, `.article`, `.next-project`) and add a `.card` to the projects grid in `index.html`.
-- The site is light-theme only (matte off-white background, flat surfaces, minimal shadows) by design; don't add a dark mode. Colors and shadows are CSS custom properties on `:root`; use the tokens rather than literal colors. Layout must stay free of horizontal scroll at 390px width.
-- Icons are inline SVGs (no icon font).
+The look is deliberately plain, in the style of hand-built engineer homepages: one narrow text column (`.page`, 680px), system font, underlined text links, date + title rows with hairline dividers (`.rows`), light theme only. Avoid landing-page patterns — cards, shadows, badges, tag pills, stat tiles, CTA buttons, hero headlines — and keep copy short.
+
+To add a project, add a row to the Projects list in `index.html` and, if it needs a page, copy an existing subpage (back link, `h1.project-title`, `.subtitle`, `.links`, short prose, figures).
 
 `index.js` (vanilla JS, no dependencies) wires behavior by data attribute:
 

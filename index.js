@@ -1,12 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Header gets a bottom border once the page is scrolled.
-    const header = document.querySelector('.site-header');
-    if (header) {
-        const update = () => header.classList.toggle('scrolled', window.scrollY > 8);
-        update();
-        window.addEventListener('scroll', update, { passive: true });
-    }
-
     document.querySelectorAll('[data-current-year]').forEach((el) => {
         el.textContent = new Date().getFullYear();
     });
@@ -39,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const offset = shuffled ? (target - index) * step : 0;
                 tile.style.transform = `translateX(${offset}px)`;
             });
-            label.textContent = shuffled ? 'Back to Mondrian' : 'Rearrange the letters';
+            label.textContent = shuffled ? 'Back' : 'Rearrange';
             anagram.querySelector('[aria-live]').textContent = shuffled ? 'IN RANDOM' : 'MONDRIAN';
         });
     });

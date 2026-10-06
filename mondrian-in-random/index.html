@@ -5,123 +5,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mondrian in Random · Soma Veszelovszki</title>
-  <meta name="description"
-    content="Mondrian in Random: an Android app that generates random Mondrian-style wallpapers, built with Kotlin and Jetpack Compose.">
-  <meta property="og:title" content="Mondrian in Random · Soma Veszelovszki">
-  <meta property="og:description" content="An Android app that generates random Mondrian-style wallpapers.">
+  <meta name="description" content="An Android app that generates Mondrian-style wallpapers.">
   <meta property="og:image" content="https://soma.veszelovszki.hu/resources/img/mondrian-feature.jpg">
-  <meta name="theme-color" content="#f8f8f6">
   <link rel="icon" href="../resources/favicon.svg" type="image/svg+xml">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="../style.css">
   <script src="../index.js" defer></script>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="../" aria-label="Soma Veszelovszki, home">
-        <span class="brand-mark">SV</span>
-        <span class="brand-name">Soma Veszelovszki</span>
-      </a>
-      <nav class="nav" aria-label="Main">
-        <a href="../#experience" class="nav-hide-sm">Experience</a>
-        <a href="../#projects">Projects</a>
-        <a href="../#contact">Contact</a>
-        <a class="btn btn-sm" href="../resources/SomaVeszelovszki_resume.pdf" target="_blank" rel="noopener">Resume</a>
-      </nav>
-    </div>
-  </header>
+  <main class="page">
+    <a class="back" href="../">← Soma Veszelovszki</a>
 
-  <main>
-    <section class="project-hero">
-      <div class="container">
-        <a class="back-link" href="../#projects">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" aria-hidden="true">
-            <path d="m12 19-7-7 7-7" />
-            <path d="M19 12H5" />
-          </svg>
-          All projects
-        </a>
-        <div class="project-title-row">
-          <img class="project-icon" src="../resources/img/mondrian-icon.png" alt="" width="64" height="64">
-          <h1>Mondrian in Random</h1>
-        </div>
-        <p class="lede">
-          An Android app that generates random compositions in the style of Piet Mondrian and sets them as your
-          home screen or lock screen wallpaper.
-        </p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="https://github.com/somaveszelovszki/MondrianInRandom" target="_blank"
-            rel="noopener">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-              <path
-                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-            </svg>
-            View on GitHub
-          </a>
-          <a class="btn" href="privacy-policy.html">Privacy policy</a>
-        </div>
+    <article>
+      <h1 class="project-title">
+        <img src="../resources/img/mondrian-icon.png" alt="" width="36" height="36">
+        Mondrian in Random
+      </h1>
+      <p class="subtitle">An Android wallpaper generator, 2023</p>
+      <ul class="links">
+        <li><a href="https://github.com/somaveszelovszki/MondrianInRandom">GitHub</a></li>
+        <li><a href="privacy-policy.html">Privacy policy</a></li>
+      </ul>
 
-        <dl class="facts">
-          <div class="fact">
-            <dt>Platform</dt>
-            <dd>Android 8.0+</dd>
-          </div>
-          <div class="fact">
-            <dt>Language</dt>
-            <dd>Kotlin</dd>
-          </div>
-          <div class="fact">
-            <dt>UI</dt>
-            <dd>Jetpack Compose</dd>
-          </div>
-          <div class="fact">
-            <dt>Year</dt>
-            <dd>2023</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <figure class="cover">
-      <img src="../resources/img/mondrian-feature.jpg"
-        alt="Mondrian in Random: generated wallpapers on the lock screen, the generator screen in light and dark themes, and the set-wallpaper dialog"
-        width="1024" height="500">
-    </figure>
-
-    <article class="article">
-      <h2>What it does</h2>
       <p>
-        Tap <strong>Generate</strong> and the app draws a new composition sized to your screen: black grid lines and
-        blocks of primary color, different every time. Pick a <strong>light</strong> or <strong>dark</strong> theme,
-        keep generating until you like one, then tap <strong>Set as…</strong> to apply it to the home screen, the
-        lock screen, or both.
+        Tap Generate to get a new composition in the style of Piet Mondrian, sized to your screen, in a light or dark
+        theme. Set it as your home screen or lock screen wallpaper.
       </p>
 
-      <h2>How the pictures are generated</h2>
+      <figure>
+        <img src="../resources/img/mondrian-feature.jpg" alt="Generated wallpapers and the app's screens" width="1024"
+          height="500">
+      </figure>
+
       <p>
-        The generator works in two steps. A <strong>line generator</strong> places horizontal and vertical lines one
-        at a time. Each new line starts and ends on lines that already exist, so the grid always holds together the
-        way it does in a real Mondrian. An <strong>image generator</strong> then splits the canvas into the
-        rectangles those lines enclose, fills some of them with color, and renders the result to a bitmap at the
-        device's resolution.
-      </p>
-      <p>
-        The UI is built with <strong>Jetpack Compose</strong>, and settings such as the theme and the wallpaper
-        targets are saved between launches.
+        Lines are placed one at a time, each starting and ending on an existing line, so the grid always holds
+        together. The enclosed rectangles are then filled with color and drawn to a bitmap. Written in Kotlin with
+        Jetpack Compose.
       </p>
 
-      <h2>Fun fact</h2>
-      <p>
-        <strong>Mondrian</strong> is an anagram of <strong>in random</strong>, which is where the app's name comes
-        from. See for yourself:
-      </p>
+      <p>And yes, <em>Mondrian</em> is an anagram of <em>in random</em>:</p>
       <div class="anagram" data-anagram>
         <div class="anagram-tiles" aria-hidden="true">
           <span class="anagram-tile" data-target="7">M</span>
@@ -134,32 +56,12 @@
           <span class="anagram-tile" data-target="4">N</span>
         </div>
         <span class="visually-hidden" aria-live="polite">MONDRIAN</span>
-        <button class="btn btn-sm" type="button"><span>Rearrange the letters</span></button>
+        <button type="button"><span>Rearrange</span></button>
       </div>
-
-      <a class="next-project" href="../babocar/">
-        <span>
-          <small>Next project</small>
-          <strong>babocar</strong>
-        </span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" aria-hidden="true">
-          <path d="M5 12h14" />
-          <path d="m12 5 7 7-7 7" />
-        </svg>
-      </a>
     </article>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <span>© <span data-current-year>2026</span> Soma Veszelovszki</span>
-      <span class="footer-links">
-        <a href="../">Home</a>
-        <a href="../#contact">Contact</a>
-      </span>
-    </div>
-  </footer>
+    <footer>© <span data-current-year>2026</span> Soma Veszelovszki</footer>
+  </main>
 </body>
 
 </html>
