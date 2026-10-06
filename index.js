@@ -1,88 +1,59 @@
-$(document).ready(function () {
-    $(".animated-width").each(function () {
-        $(this).css("width", $(this).data("target-width"))
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    // Header gets a bottom border once the page is scrolled.
+    const header = document.querySelector('.site-header');
+    if (header) {
+        const update = () => header.classList.toggle('scrolled', window.scrollY > 8);
+        update();
+        window.addEventListener('scroll', update, { passive: true });
+    }
 
-    $(".animated-height").each(function () {
-        $(this).css("height", $(this).data("target-height"))
-    });
-
-    $('[data-link]').click(function () {
-        window.location.href = $(this).data("link");
-    })
-
-    $('[data-link-new]').click(function () {
-        window.open($(this).data("link-new"), '_blank').focus();
-    })
-
-    $('[data-calculate-years-since]').each(function () {
-        let elapsedTime = new Date(new Date() - Date.parse($(this).data('calculate-years-since')))
-        $(this).text(Math.abs(elapsedTime.getUTCFullYear() - 1970));
-    })
-
-    $('[data-markdown-src]').each(function () {
-        let view = $(this)
-        $.ajax({
-            url: view.data("markdown-src"),
-            success: function (text) {
-                view.html(new showdown.Converter().makeHtml(text))
-            }
-        });
-    })
-
-    $('.joke').each(function () {
-        fetch("https://v2.jokeapi.dev/joke/programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=twopart")
-            .then((info) => info.json())
-            .then((item) => {
-                $(this).find('.setup').text(item.setup)
-                $(this).find('.delivery').text(item.delivery)
-            });
-    })
-
-    $('.draggable').draggable();
-
-    $('.letter-tile').mouseup(function (e) {
-        const m = $('#letter-tile-m').position().left;
-        const o = $('#letter-tile-o').position().left;
-        const n = $('#letter-tile-n').position().left;
-        const d = $('#letter-tile-d').position().left;
-        const r = $('#letter-tile-r').position().left;
-        const i = $('#letter-tile-i').position().left;
-        const a = $('#letter-tile-a').position().left;
-        const n2 = $('#letter-tile-n2').position().left;
-
-        const positions = [i, Math.min(n, n2), r, a, Math.max(n, n2), d, o, m];
-        const sorted = [...positions].sort((a, b) => a - b)
-
-        if (positions.every((pos, i) => pos == sorted[i])) {
-            $('.letter-tile').animate(
-                { deg: 360 },
-                {
-                    duration: 500,
-                    easing: 'linear',
-                    step: function (now) {
-                        let rotation = `rotate(${now}deg)`
-                        $(this).css('-webkit-transform', rotation);
-                        $(this).css('-moz-transform', rotation);
-                        $(this).css('transform', rotation);
-                    }
-                }
-            );
-
-            const marginLeft = parseInt($('#letter-tile-m').css("marginLeft").replace('px', ''));
-            const marginRight = parseInt($('#letter-tile-m').css("marginRight").replace('px', ''));
-            const width = $('#letter-tile-m').width();
-
-            const pos = (before, after) => ((after >= 2 ? after + 0.5 : after) - before) * (width + marginLeft + marginRight);
-
-            $('#letter-tile-i').animate({ left: pos(5, 0), top: 0 }, 1000);
-            $('#letter-tile-n').animate({ left: pos(2, 1), top: 0 }, 1000);
-            $('#letter-tile-r').animate({ left: pos(4, 2), top: 0 }, 1000);
-            $('#letter-tile-a').animate({ left: pos(6, 3), top: 0 }, 1000);
-            $('#letter-tile-n2').animate({ left: pos(7, 4), top: 0 }, 1000);
-            $('#letter-tile-d').animate({ left: pos(3, 5), top: 0 }, 1000);
-            $('#letter-tile-o').animate({ left: pos(1, 6), top: 0 }, 1000);
-            $('#letter-tile-m').animate({ left: pos(0, 7), top: 0 }, 1000);
+    // <span data-years-since="2017-07-01">9</span> -> whole years elapsed since the date.
+    document.querySelectorAll('[data-years-since]').forEach((el) => {
+        const since = new Date(el.dataset.yearsSince);
+        const now = new Date();
+        let years = now.getFullYear() - since.getFullYear();
+        if (now.getMonth() < since.getMonth() || (now.getMonth() === since.getMonth() && now.getDate() < since.getDate())) {
+            years--;
         }
+        if (!Number.isNaN(years)) {
+            el.textContent = years;
+        }
+    });
+
+    document.querySelectorAll('[data-current-year]').forEach((el) => {
+        el.textContent = new Date().getFullYear();
+    });
+
+    // Click-to-load YouTube embeds: <button class="video" data-youtube-id="...">
+    document.querySelectorAll('[data-youtube-id]').forEach((button) => {
+        button.addEventListener('click', () => {
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube-nocookie.com/embed/${button.dataset.youtubeId}?autoplay=1&rel=0`;
+            iframe.title = button.getAttribute('aria-label') || 'YouTube video';
+            iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+            iframe.allowFullscreen = true;
+            button.replaceChildren(iframe);
+            button.removeAttribute('aria-label');
+        }, { once: true });
+    });
+
+    // MONDRIAN <-> INRANDOM anagram: tiles slide to the positions listed in data-target.
+    document.querySelectorAll('[data-anagram]').forEach((anagram) => {
+        const tiles = [...anagram.querySelectorAll('.anagram-tile')];
+        const button = anagram.querySelector('button');
+        const label = button.querySelector('span');
+        let shuffled = false;
+
+        button.addEventListener('click', () => {
+            shuffled = !shuffled;
+            const step = tiles[1].offsetLeft - tiles[0].offsetLeft;
+            tiles.forEach((tile, index) => {
+                const target = Number(tile.dataset.target);
+                const offset = shuffled ? (target - index) * step : 0;
+                tile.style.transform = `translateX(${offset}px)`;
+            });
+            label.textContent = shuffled ? 'Back to Mondrian' : 'Rearrange the letters';
+            anagram.querySelector('[aria-live]').textContent = shuffled ? 'IN RANDOM' : 'MONDRIAN';
+        });
     });
 });

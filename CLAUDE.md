@@ -6,24 +6,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Personal profile/portfolio site for Soma Veszelovszki, served at https://soma.veszelovszki.hu (custom domain set via `CNAME`, i.e. static GitHub Pages hosting). Pushing to `master` publishes the site.
 
-There is no build system, package manager, linter, or test suite — it is plain static HTML/CSS/JS. To preview locally, serve the repo root over HTTP (e.g. `python3 -m http.server`) rather than opening files directly, since `data-markdown-src` loads content via AJAX.
+There is no build system, package manager, linter, or test suite — it is plain static HTML/CSS/JS with no frameworks. To preview locally, serve the repo root over HTTP (e.g. `python3 -m http.server`) so root-relative directory links like `babocar/` resolve.
 
 ## Structure
 
-- `index.html` — the main profile page (bio, skills, project cards, resume link).
-- One directory per project page (`babocar/`, `micro-utils/`, `mondrian-in-random/`, `python-snake/`), each with its own `index.html`. `mondrian-in-random/privacy-policy.html` is the app's store privacy policy.
+- `index.html` — the single-page profile: hero, about + skills, experience, projects, contact.
+- One directory per project case study (`babocar/`, `micro-utils/`, `mondrian-in-random/`), each with its own `index.html`. `mondrian-in-random/privacy-policy.html` is the app's store privacy policy — its legal text must not be reworded.
 - `style.css` and `index.js` at the root are shared by every page; subpages reference them (and `resources/`) via `../` relative paths.
-- `resources/` — images, button graphics (`.xcf` files are GIMP sources for the corresponding `.png`), the resume PDF (`SomaVeszelovszki_resume.pdf`), and downloadable binaries.
+- `resources/img/` holds locally hosted, resized images (don't hotlink GitHub raw files); `resources/SomaVeszelovszki_resume.pdf` is the resume linked from every page.
+
+## Content sources
+
+Experience, dates and skills mirror the resume PDF; project descriptions are drawn from the corresponding GitHub repos (`github.com/somaveszelovszki/*`). Keep claims consistent with those sources.
 
 ## Page conventions
 
-Every page duplicates the same `<head>` block of CDN dependencies: jQuery 3.6.4, jQuery UI 1.12.1, Bootstrap 4.6.2 (CSS + bundle JS), and Showdown 2.1.0. Layout uses Bootstrap 4 grid/cards. When adding a new project page, copy an existing subpage as the template so the head, top bar (back-to-profile + resume buttons), and relative paths stay consistent, then add a card linking to it from `index.html`.
+- Every page repeats the same `<head>` (Inter + JetBrains Mono from Google Fonts, `style.css`, deferred `index.js`, SVG favicon) and the same sticky `.site-header`. To add a project page, copy an existing subpage (`project-hero`, `.facts`, `.cover`, `.article`, `.next-project`) and add a `.card` to the projects grid in `index.html`.
+- Styling is token-driven: colors and shadows are CSS custom properties on `:root`, redefined under `@media (prefers-color-scheme: dark)`. Use the tokens rather than literal colors so dark mode keeps working. Layout must stay free of horizontal scroll at 390px width.
+- Icons are inline SVGs (no icon font).
 
-Behavior is declarative: `index.js` runs on document ready and wires up elements by data attribute/class, so new pages generally need markup only, no new JS:
+`index.js` (vanilla JS, no dependencies) wires behavior by data attribute:
 
-- `data-link` / `data-link-new` — make any element (typically image `<button>`s) navigate in the same / a new tab.
-- `.animated-width` / `.animated-height` with `data-target-width` / `data-target-height` — CSS-transitioned skill bars that grow from 0 on load.
-- `data-calculate-years-since="<date>"` — replaces text with the number of whole years elapsed.
-- `data-markdown-src="<url>"` — fetches Markdown and renders it into the element with Showdown.
-- `.joke` (with `.setup` / `.delivery` children) — filled from JokeAPI.
-- `.draggable` — jQuery UI draggable; the `.letter-tile` / `#letter-tile-*` logic is a puzzle specific to `mondrian-in-random/index.html` (the tiles spell "MONDRIAN"; dragging them into "INRANDOM" order triggers an animation).
+- `data-years-since="<date>"` — replaces text with whole years elapsed (used for years of experience; the static fallback text should stay roughly correct).
+- `data-current-year` — footer copyright year.
+- `data-youtube-id` on a `button.video` — click-to-load YouTube embed (no third-party requests until clicked).
+- `data-anagram` — the MONDRIAN → INRANDOM tile animation on the Mondrian page; each `.anagram-tile`'s `data-target` is its index in the rearranged word.

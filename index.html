@@ -1,294 +1,495 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Soma Veszelovszki</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soma Veszelovszki · Software Engineer</title>
+  <meta name="description"
+    content="Soma Veszelovszki is a senior full-stack engineer in Budapest with experience in autonomous driving, options trading and manufacturing software.">
+  <meta property="og:title" content="Soma Veszelovszki · Software Engineer">
+  <meta property="og:description"
+    content="Senior full-stack engineer in Budapest. TypeScript, C++, and a self-driving model car.">
+  <meta property="og:image" content="https://soma.veszelovszki.hu/resources/img/portrait.jpg">
+  <meta property="og:url" content="https://soma.veszelovszki.hu/">
+  <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="resources/favicon.svg" type="image/svg+xml">
 
-  <!-- External dependencies -->
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-    crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
-
-  <!-- Internal dependencies -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css">
-  <script src="index.js"></script>
+  <script src="index.js" defer></script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="main-body">
-      <div class="row gutters-sm">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top" aria-label="Soma Veszelovszki, back to top">
+        <span class="brand-mark">SV</span>
+        <span class="brand-name">Soma Veszelovszki</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#about" class="nav-hide-sm">About</a>
+        <a href="#experience" class="nav-hide-sm">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-sm" href="resources/SomaVeszelovszki_resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </nav>
+    </div>
+  </header>
 
-        <!-- Top bar -->
-        <div class="col-12">
-          <div class="card mb-3">
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <div class="flex-grow-1 text-center" style="margin: auto;">
-                  <h6 class="text-secondary" style="margin: 0;">Hey, I'm Soma! Welcome to my profile page!</h6>
-                </div>
-                <button type="button" class="animated-highlight"
-                  data-link-new="resources/SomaVeszelovszki_resume.pdf"><img src="resources/view-resume.png" /></button>
-              </div>
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Senior Full-Stack Engineer · Budapest, Hungary</p>
+            <h1>Hi, I'm Soma. <span class="muted">I build software, from firmware to full-stack.</span></h1>
+            <p class="hero-lede">
+              I've spent <span data-years-since="2017-07-01">9</span>+ years building products and infrastructure in
+              autonomous driving, options trading and manufacturing software. I mostly work in TypeScript and C++,
+              and I own features from the design doc through to production.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="mailto:soma.veszelovszki@gmail.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                Get in touch
+              </a>
+              <a class="btn" href="resources/SomaVeszelovszki_resume.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                  <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                  <path d="M10 13H8" />
+                  <path d="M16 17H8" />
+                  <path d="M16 13h-2" />
+                </svg>
+                View resume
+              </a>
+              <span class="icon-links">
+                <a class="icon-link" href="https://github.com/somaveszelovszki" target="_blank" rel="noopener"
+                  aria-label="GitHub">
+                  <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                  </svg>
+                </a>
+                <a class="icon-link" href="https://www.linkedin.com/in/soma-veszelovszki/" target="_blank"
+                  rel="noopener" aria-label="LinkedIn">
+                  <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                  </svg>
+                </a>
+              </span>
             </div>
+          </div>
+          <div class="portrait">
+            <img src="resources/img/portrait.jpg" alt="Portrait of Soma Veszelovszki" width="480" height="480">
           </div>
         </div>
 
-        <!-- Left column -->
-        <div class="col-lg-4">
-          <div class="row gutters-sm">
-
-            <!-- Profile -->
-            <div class="col-12">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="d-flex flex-column align-items-center text-center">
-                    <img src="resources/profile-picture.png" alt="Profile picture" class="rounded-circle shadow"
-                      width="180">
-                    <div class="mt-3">
-                      <h4>Soma Veszelovszki</h4>
-                      <p class="text-secondary mb-1">Software Engineer</p>
-                      <p class="text-muted font-size-sm">Budapest, Hungary</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Contact information -->
-            <div class="col-12">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <ul class="list-group list-group-flush">
-                    <li
-                      class="list-group-item d-flex justify-content-between align-items-center flex-wrap contact-list-group-item">
-                      <h6 class="mb-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-envelope inline-pictogram" viewBox="0 0 16 16">
-                          <path
-                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
-                        </svg>Email
-                      </h6>
-                      <a href="mailto:soma.veszelovszki@gmail.com">
-                        <span class="text-secondary">soma.veszelovszki@gmail.com</span>
-                      </a>
-                    </li>
-                    <li
-                      class="list-group-item d-flex justify-content-between align-items-center flex-wrap contact-list-group-item">
-                      <h6 class="mb-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-telephone inline-pictogram" viewBox="0 0 16 16">
-                          <path
-                            d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-                        </svg>Phone
-                      </h6>
-                      <a href="tel:+36209371055">
-                        <span class="text-secondary">+36 20 9371 055</span>
-                      </a>
-                    </li>
-                    <li
-                      class="list-group-item d-flex justify-content-between align-items-center flex-wrap contact-list-group-item">
-                      <h6 class="mb-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-github inline-pictogram" viewBox="0 0 16 16">
-                          <path
-                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                        </svg>GitHub
-                      </h6>
-                      <a href="https://github.com/somaveszelovszki">
-                        <span class="text-secondary">somaveszelovszki</span>
-                      </a>
-                    </li>
-                    <li
-                      class="list-group-item d-flex justify-content-between align-items-center flex-wrap contact-list-group-item">
-                      <h6 class="mb-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-facebook inline-pictogram" viewBox="0 0 16 16">
-                          <path
-                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                        </svg>Facebook
-                      </h6>
-                      <a href="https://www.facebook.com/soma.veszelovszki">
-                        <span class="text-secondary">soma.veszelovszki</span>
-                      </a>
-                    </li>
-                    <li
-                      class="list-group-item d-flex justify-content-between align-items-center flex-wrap contact-list-group-item">
-                      <h6 class="mb-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-linkedin inline-pictogram" viewBox="0 0 16 16">
-                          <path
-                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                        </svg>LinkedIn
-                      </h6>
-                      <a href="https://www.linkedin.com/in/soma-veszelovszki/">
-                        <span class="text-secondary">soma-veszelovszki</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-value"><span data-years-since="2017-07-01">9</span>+ years</span>
+            <span class="stat-label">of professional software engineering</span>
           </div>
-        </div>
-
-        <!-- Right column -->
-        <div class="col-lg-8">
-          <div class="row gutters-sm">
-
-            <!-- About me -->
-            <div class="col-12">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h5 class="d-flex align-items-center mb-3 card-title">About me</h5>
-                  <p class="text-justify">
-                    <b>I’ve always been driven by building things — from physical models to production software.</b>
-                  </p>
-
-                  <p class="text-justify">
-                    I grew up and currently live in Hungary. Early on, I developed a strong interest in building mechanical systems,
-                    starting with complex LEGO models, particularly cars. This interest naturally evolved into engineering projects,
-                    including a <b>self-driving</b> model car as the focus of my Master’s thesis.
-                  </p>
-
-                  <p class="text-justify">
-                    While studying at the Budapest University of Technology and Economics, I discovered that software engineering
-                    offers a similar kind of creative problem-solving — assembling complex systems from well-designed components.
-                    That realization led me to pursue software development professionally, a field I’ve been deeply engaged in ever since.
-                  </p>
-
-                  <p class="text-justify">
-                    Over the course of my career, I’ve accumulated <b>8+ years</b> of professional engineering experience in startup
-                    environments. While I have experience building <b>web</b> and <b>mobile</b> applications, my primary focus has been
-                    on delivering <b>end-to-end product features</b> and developing <b>scalable backend and full-stack systems</b>
-                    using <b>TypeScript</b> and <b>C++</b>, with strong ownership from design through production.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Projects -->
-            <div class="col-12">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h5 class="d-flex align-items-center mb-3 card-title">Projects</h5>
-                  <ul class="list-group list-group-flush">
-                    <li
-                      class="list-group-item d-flex justify-content-between align-items-center flex-wrap project-list-item hover-pointer"
-                      data-link="babocar/index.html">
-                      <div class="row align-items-center">
-                        <img src="resources/babocar-profile.jpg" class="rounded-circle shadow" width="32" height="32"
-                          style="margin: 0 5px;" />
-                        <h6 class="mb-0">babocar</h6>
-                      </div>
-                      <span class="text-secondary" style="margin-left: 27px">Self-driving car hardware and
-                        software</span>
-                    </li>
-                    <li
-                      class="list-group-item d-flex justify-content-between align-items-center flex-wrap project-list-item hover-pointer"
-                      data-link="mondrian-in-random/index.html">
-                      <div class="row align-items-center">
-                        <img
-                          src="https://raw.githubusercontent.com/somaveszelovszki/MondrianInRandom/main/docs/ic_launcher.png"
-                          class="rounded-circle shadow" width="32" height="32" style="margin: 0 5px;" />
-                        <h6 class="mb-0">Mondrian in Random</h6>
-                      </div>
-                      <span class="text-secondary" style="margin-left: 27px">Mondrian-style wallpaper generator for
-                        Android</span>
-                    </li>
-                    <li
-                      class="list-group-item d-flex justify-content-between align-items-center flex-wrap project-list-item hover-pointer"
-                      data-link="micro-utils/index.html">
-                      <div class="row align-items-center">
-                        <img src="resources/micro-utils-profile.png" class="rounded-circle shadow" width="32"
-                          height="32" style="margin: 0 5px;" />
-                        <h6 class="mb-0">micro-utils</h6>
-                      </div>
-                      <span class="text-secondary" style="margin-left: 27px">Portable C++ utility library
-                        collection</span>
-                    </li>
-                    <li
-                      class="list-group-item d-flex justify-content-between align-items-center flex-wrap project-list-item hover-pointer"
-                      data-link="python-snake/index.html">
-                      <div class="row align-items-center">
-                        <img src="resources/python-snake-profile.png" class="rounded-circle shadow" width="32"
-                          height="32" style="margin: 0 5px;" />
-                        <h6 class="mb-0">Python Snake</h6>
-                      </div>
-                      <span class="text-secondary" style="margin-left: 27px">The popular Snake game with online
-                        high-scores</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
+          <div class="stat">
+            <span class="stat-value">3 industries</span>
+            <span class="stat-label">Autonomous driving, options trading, manufacturing software</span>
           </div>
-          <div class="row gutters-sm">
-
-            <!-- Qualities -->
-            <div class="col-lg-6 mb-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="d-flex align-items-center mb-3 card-title">Qualities</h5>
-                  <small>TypeScript</small>
-                  <div class="progress mb-3" style="height: 5px;">
-                    <div class="progress-bar animated-width" role="progressbar" style="width: 0;"
-                      data-target-width="90%"></div>
-                  </div>
-                  <small>MongoDB</small>
-                  <div class="progress mb-3" style="height: 5px;">
-                    <div class="progress-bar animated-width" role="progressbar" style="width: 0;"
-                      data-target-width="70%"></div>
-                  </div>
-                  <small>C++</small>
-                  <div class="progress mb-3" style="height: 5px;">
-                    <div class="progress-bar animated-width" role="progressbar" style="width: 0;"
-                      data-target-width="75%"></div>
-                  </div>
-                  <small>Enthusiasm</small>
-                  <div class="progress mb-3 animated-width"
-                    style="position: relative; overflow: visible; width: 0; height: 5px;" data-target-width="110%">
-                    <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
-                    <div class="stickman">
-                      <img src="resources/stickman.png" width="40px" height="40px" />
-                    </div>
-                  </div>
-                  <small>Communication skills</small>
-                  <div class="progress mb-3" style="height: 5px;">
-                    <div class="progress-bar animated-width" role="progressbar" style="width: 0;"
-                      data-target-width="85%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Random programming joke -->
-            <div class="col-lg-6 mb-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="d-flex align-items-center mb-3 card-title">Random programming joke</h5>
-                  <div class="joke">
-                    <p><small class="setup" style="font-weight: bold;"></small></p>
-                    <p><small class="delivery"></small></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          <div class="stat">
+            <span class="stat-value">Lap record</span>
+            <span class="stat-label">All-time fastest lap at the RobonAUT autonomous car race</span>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container split">
+        <div>
+          <span class="section-label">About</span>
+          <h2 class="section-title">I've always liked building things</h2>
+        </div>
+        <div>
+          <div class="prose">
+            <p>
+              I grew up in Hungary building complex LEGO models, mostly cars. That turned into engineering: I studied
+              <strong>Electrical Engineering</strong> at the Budapest University of Technology and Economics, graduating
+              with a Master's degree <strong>summa cum laude</strong>, and I built a <strong>self-driving model
+                car</strong> from the circuit boards up.
+            </p>
+            <p>
+              At university I found that software engineering offered the same kind of problem solving: putting complex
+              systems together from well-designed parts. I've worked as a software engineer ever since, in
+              <strong>startups</strong> and fast-moving product teams.
+            </p>
+            <p>
+              Most of my work is <strong>end-to-end product features</strong> and <strong>scalable backend and
+                full-stack systems</strong>. I like owning a problem from the first design discussion to production,
+                including the risky migrations, the monitoring, and the on-call rotation.
+            </p>
+          </div>
+
+          <div class="skill-groups" style="margin-top: 40px;">
+            <div class="skill-group">
+              <h3>Languages &amp; frameworks</h3>
+              <ul class="tags">
+                <li class="tag">TypeScript</li>
+                <li class="tag">C++</li>
+                <li class="tag">C</li>
+                <li class="tag">Node.js</li>
+                <li class="tag">React</li>
+                <li class="tag">Boost</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Data &amp; APIs</h3>
+              <ul class="tags">
+                <li class="tag">MongoDB</li>
+                <li class="tag">PostgreSQL</li>
+                <li class="tag">Redis</li>
+                <li class="tag">Protobuf</li>
+                <li class="tag">Microservices</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Infrastructure &amp; tooling</h3>
+              <ul class="tags">
+                <li class="tag">Docker</li>
+                <li class="tag">Kubernetes</li>
+                <li class="tag">AWS</li>
+                <li class="tag">GitHub Actions</li>
+                <li class="tag">Claude Code</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Testing</h3>
+              <ul class="tags">
+                <li class="tag">Jest</li>
+                <li class="tag">Playwright</li>
+                <li class="tag">Cypress</li>
+                <li class="tag">GTest</li>
+                <li class="tag">GMock</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="container split">
+        <div>
+          <span class="section-label">Experience</span>
+          <h2 class="section-title">Where I've worked</h2>
+        </div>
+        <div>
+          <ol class="timeline">
+            <li class="role">
+              <div class="role-period">Aug 2023 – Present</div>
+              <div>
+                <h3 class="role-title">Senior Full-Stack Engineer</h3>
+                <p class="role-company"><a href="https://tulip.co" target="_blank" rel="noopener">Tulip
+                    Interfaces</a> · No-code composable MES · USA / Hungary</p>
+                <ul>
+                  <li>Owned a large, customer-facing project that involved several high-risk database migrations,
+                    and coordinated its rollout. It shipped with no incidents or downtime.</li>
+                  <li>Represent the team in organization-wide technical discussions and help shape architectural
+                    decisions.</li>
+                  <li>Mentor junior and mid-level engineers, helping with onboarding, code quality and team velocity.
+                  </li>
+                  <li>Built and maintain an AI session manager, a daily tool for several teams that has handled more
+                    than 1,000 agentic sessions.</li>
+                </ul>
+                <ul class="tags">
+                  <li class="tag">TypeScript</li>
+                  <li class="tag">React</li>
+                  <li class="tag">MongoDB</li>
+                </ul>
+              </div>
+            </li>
+            <li class="role">
+              <div class="role-period">May 2021 – Jan 2023</div>
+              <div>
+                <h3 class="role-title">Backend Engineer</h3>
+                <p class="role-company"><a href="https://www.maverickderivatives.com" target="_blank"
+                    rel="noopener">Maverick Derivatives</a> · Options trading · Netherlands</p>
+                <ul>
+                  <li>Built a trading server from scratch that manages 200,000 instruments and handles 30% of the
+                    company's trades in its domain.</li>
+                  <li>Owned a latency-sensitive quoting service end to end: development, deployment, monitoring and
+                    on-call incident response.</li>
+                  <li>Worked closely with traders and other stakeholders to turn business requirements into reliable
+                    production systems.</li>
+                </ul>
+                <ul class="tags">
+                  <li class="tag">C++</li>
+                </ul>
+              </div>
+            </li>
+            <li class="role">
+              <div class="role-period">Jul 2017 – Apr 2021</div>
+              <div>
+                <h3 class="role-title">Software Engineer</h3>
+                <p class="role-company"><a href="https://aimotive.com" target="_blank" rel="noopener">aiMotive</a> ·
+                  Autonomous driving · Hungary</p>
+                <ul>
+                  <li>Built a media ingestion and storage system that processes more than 100 GB of video a day for
+                    internal tools and analysis.</li>
+                  <li>Refactored the software-to-vehicle API to support four car platforms, which made it easier to
+                    maintain and work with.</li>
+                </ul>
+                <ul class="tags">
+                  <li class="tag">C</li>
+                  <li class="tag">C++</li>
+                </ul>
+              </div>
+            </li>
+            <li class="role">
+              <div class="role-period">Sep 2014 – Jan 2021</div>
+              <div>
+                <h3 class="role-title">MSc, Electrical Engineering</h3>
+                <p class="role-company">Budapest University of Technology and Economics · Summa cum laude</p>
+              </div>
+            </li>
+          </ol>
+          <p class="timeline-foot">
+            My full work history is on
+            <a href="https://www.linkedin.com/in/soma-veszelovszki/" target="_blank" rel="noopener">LinkedIn</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Projects</span>
+            <h2 class="section-title">Things I've built outside work</h2>
+          </div>
+          <p class="section-aside">Hardware, embedded, mobile and web.</p>
+        </div>
+
+        <div class="projects">
+
+          <article class="card card-featured">
+            <div class="card-media">
+              <img src="resources/img/babocar-car.jpg" alt="The babocar self-driving model car" loading="lazy"
+                width="1400" height="1400">
+            </div>
+            <div class="card-body">
+              <span class="badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                  <path d="M4 22h16" />
+                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                </svg>
+                All-time RobonAUT lap record
+              </span>
+              <p class="card-kicker">Hardware · Embedded · Full-stack</p>
+              <h3 class="card-title"><a class="stretched" href="babocar/">babocar</a></h3>
+              <p class="card-text">
+                The hardware and software for a self-driving model car: custom circuit boards, 3D-printed parts,
+                FreeRTOS firmware on several STM32 microcontrollers that talk over a CAN bus, and a React dashboard
+                for live telemetry and parameter tuning. It follows lines, solves a line maze, overtakes on the race
+                track, and holds the race's all-time lap record.
+              </p>
+              <ul class="tags">
+                <li class="tag">C++</li>
+                <li class="tag">STM32</li>
+                <li class="tag">FreeRTOS</li>
+                <li class="tag">CAN</li>
+                <li class="tag">Node.js</li>
+                <li class="tag">React</li>
+                <li class="tag">MQTT</li>
+              </ul>
+              <div class="card-links">
+                <a href="babocar/">Read more →</a>
+                <a href="https://github.com/somaveszelovszki/babocar" target="_blank" rel="noopener">GitHub ↗</a>
+                <a href="https://www.youtube.com/watch?v=wYXTI0n2l1o" target="_blank" rel="noopener">Watch the lap
+                  ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="resources/img/mondrian-feature.jpg" alt="Mondrian in Random screenshots" loading="lazy"
+                width="1024" height="500">
+            </div>
+            <div class="card-body">
+              <p class="card-kicker">Android · Kotlin</p>
+              <h3 class="card-title"><a class="stretched" href="mondrian-in-random/">Mondrian in Random</a></h3>
+              <p class="card-text">
+                An Android app that generates random Mondrian-style compositions and sets them as your home or lock
+                screen wallpaper, in a light or dark theme.
+              </p>
+              <ul class="tags">
+                <li class="tag">Kotlin</li>
+                <li class="tag">Jetpack Compose</li>
+                <li class="tag">Android</li>
+              </ul>
+              <div class="card-links">
+                <a href="mondrian-in-random/">Read more →</a>
+                <a href="https://github.com/somaveszelovszki/MondrianInRandom" target="_blank" rel="noopener">GitHub
+                  ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <pre class="code-preview" aria-hidden="true"><span class="c"># static allocation only</span>
+<span class="k">include/micro/</span>
+├── <span class="t">container/</span> <span class="n">vector, map, set</span>
+├── <span class="t">control/</span>   <span class="n">PID, ramp</span>
+├── <span class="t">sensor/</span>    <span class="n">Madgwick AHRS</span>
+├── <span class="t">hw/</span>        <span class="n">drivers</span>
+├── <span class="t">port/</span>      <span class="n">HAL + RTOS</span>
+└── <span class="t">…</span>          <span class="n">json, log, sim</span></pre>
+            </div>
+            <div class="card-body">
+              <p class="card-kicker">Embedded · C++17 library</p>
+              <h3 class="card-title"><a class="stretched" href="micro-utils/">micro-utils</a></h3>
+              <p class="card-text">
+                Portable C++ utility libraries for embedded systems: containers, control loops, sensor fusion, drivers
+                and an OS/HAL abstraction layer. Everything uses static memory allocation only.
+              </p>
+              <ul class="tags">
+                <li class="tag">C++17</li>
+                <li class="tag">CMake</li>
+                <li class="tag">GoogleTest</li>
+                <li class="tag">FreeRTOS</li>
+              </ul>
+              <div class="card-links">
+                <a href="micro-utils/">Read more →</a>
+                <a href="https://github.com/somaveszelovszki/micro-utils" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="resources/img/mimoza-design.jpg" alt="The Mimóza Design home page" loading="lazy"
+                width="1280" height="800">
+            </div>
+            <div class="card-body">
+              <p class="card-kicker">Web · Client project</p>
+              <h3 class="card-title"><a class="stretched" href="https://mimozadesign.hu" target="_blank"
+                  rel="noopener">Mimóza Design</a></h3>
+              <p class="card-text">
+                The website and webshop for a Hungarian wedding decoration studio, with a product catalogue, cart and
+                checkout, workshop pages, wedding galleries, and order emails sent from serverless API routes.
+              </p>
+              <ul class="tags">
+                <li class="tag">Astro</li>
+                <li class="tag">React</li>
+                <li class="tag">TypeScript</li>
+                <li class="tag">Tailwind CSS</li>
+                <li class="tag">Vercel</li>
+              </ul>
+              <div class="card-links">
+                <a href="https://mimozadesign.hu" target="_blank" rel="noopener">mimozadesign.hu ↗</a>
+                <a href="https://github.com/somaveszelovszki/mimozadesign" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <span class="section-label">Contact</span>
+            <h2>Let's talk</h2>
+            <p class="prose">
+              Whether it's a role, a project or a question about one of the projects above, email is the
+              quickest way to reach me.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="mailto:soma.veszelovszki@gmail.com">Send an email</a>
+              <a class="btn" href="resources/SomaVeszelovszki_resume.pdf" target="_blank" rel="noopener">Download
+                resume</a>
+            </div>
+          </div>
+          <ul class="contact-list">
+            <li>
+              <a href="mailto:soma.veszelovszki@gmail.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <span><span class="label">Email</span><span class="value">soma.veszelovszki@gmail.com</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+36209371055">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span><span class="label">Phone</span><span class="value">+36 20 9371 055</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/soma-veszelovszki/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                </svg>
+                <span><span class="label">LinkedIn</span><span class="value">soma-veszelovszki</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/somaveszelovszki" target="_blank" rel="noopener">
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+                <span><span class="label">GitHub</span><span class="value">somaveszelovszki</span></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span data-current-year>2026</span> Soma Veszelovszki</span>
+      <span class="footer-links">
+        <a href="https://github.com/somaveszelovszki/soma.veszelovszki.hu" target="_blank" rel="noopener">Source</a>
+        <a href="#top">Back to top ↑</a>
+      </span>
     </div>
-  </div>
-  </div>
+  </footer>
 </body>
 
 </html>
