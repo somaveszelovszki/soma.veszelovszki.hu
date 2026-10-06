@@ -22,7 +22,7 @@ Experience, dates and skills mirror the resume PDF; project descriptions are dra
 ## Page conventions
 
 - Every page repeats the same `<head>` (Inter + JetBrains Mono from Google Fonts, `style.css`, deferred `index.js`, SVG favicon) and the same sticky `.site-header`. To add a project page, copy an existing subpage (`project-hero`, `.facts`, `.cover`, `.article`, `.next-project`) and add a `.card` to the projects grid in `index.html`.
-- Styling is token-driven: colors and shadows are CSS custom properties on `:root`, redefined under `@media (prefers-color-scheme: dark)`. Use the tokens rather than literal colors so dark mode keeps working. Layout must stay free of horizontal scroll at 390px width.
+- The site is light-theme only (matte off-white background, flat surfaces, minimal shadows) by design; don't add a dark mode. Colors and shadows are CSS custom properties on `:root`; use the tokens rather than literal colors. Layout must stay free of horizontal scroll at 390px width.
 - Icons are inline SVGs (no icon font).
 
 `index.js` (vanilla JS, no dependencies) wires behavior by data attribute:
