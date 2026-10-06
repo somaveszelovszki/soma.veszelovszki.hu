@@ -53,8 +53,7 @@
           <h1>Mondrian in Random</h1>
         </div>
         <p class="lede">
-          An Android app that generates random compositions in the style of Piet Mondrian and sets them as your
-          home screen or lock screen wallpaper.
+          An Android app that generates random Mondrian-style compositions and sets them as your wallpaper.
         </p>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://github.com/somaveszelovszki/MondrianInRandom" target="_blank"
@@ -96,32 +95,19 @@
     </figure>
 
     <article class="article">
-      <h2>What it does</h2>
+      <h2>How it works</h2>
       <p>
-        Tap <strong>Generate</strong> and the app draws a new composition sized to your screen: black grid lines and
-        blocks of primary color, different every time. Pick a <strong>light</strong> or <strong>dark</strong> theme,
-        keep generating until you like one, then tap <strong>Set as…</strong> to apply it to the home screen, the
-        lock screen, or both.
-      </p>
-
-      <h2>How the pictures are generated</h2>
-      <p>
-        The generator works in two steps. A <strong>line generator</strong> places horizontal and vertical lines one
-        at a time. Each new line starts and ends on lines that already exist, so the grid always holds together the
-        way it does in a real Mondrian. An <strong>image generator</strong> then splits the canvas into the
-        rectangles those lines enclose, fills some of them with color, and renders the result to a bitmap at the
-        device's resolution.
+        Tap <strong>Generate</strong> for a new composition sized to your screen, in a light or dark theme, then
+        <strong>Set as…</strong> to apply it to the home screen, lock screen or both.
       </p>
       <p>
-        The UI is built with <strong>Jetpack Compose</strong>, and settings such as the theme and the wallpaper
-        targets are saved between launches.
+        Lines are placed one at a time, each starting and ending on an existing line, so the grid always holds
+        together. The enclosed rectangles are then filled with color and drawn to a bitmap at the device's
+        resolution.
       </p>
 
       <h2>Fun fact</h2>
-      <p>
-        <strong>Mondrian</strong> is an anagram of <strong>in random</strong>, which is where the app's name comes
-        from. See for yourself:
-      </p>
+      <p><strong>Mondrian</strong> is an anagram of <strong>in random</strong>. See for yourself:</p>
       <div class="anagram" data-anagram>
         <div class="anagram-tiles" aria-hidden="true">
           <span class="anagram-tile" data-target="7">M</span>

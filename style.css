@@ -331,22 +331,12 @@ strong {
   letter-spacing: 0.02em;
 }
 
-.eyebrow .dot {
-  flex-shrink: 0;
-  margin-top: 7px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #2fa66a;
-  box-shadow: 0 0 0 4px color-mix(in srgb, #2fa66a 20%, transparent);
-}
-
 /* ---------------------------------------------------------------------------
    Sections
    ------------------------------------------------------------------------ */
 
 .section {
-  padding: clamp(56px, 9vw, 96px) 0;
+  padding: clamp(40px, 6vw, 64px) 0;
   border-top: 1px solid var(--border);
 }
 
@@ -356,7 +346,7 @@ strong {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px 24px;
-  margin-bottom: clamp(28px, 5vw, 44px);
+  margin-bottom: clamp(20px, 3vw, 28px);
 }
 
 .section-label {
@@ -409,7 +399,7 @@ strong {
    ------------------------------------------------------------------------ */
 
 .hero {
-  padding: clamp(48px, 10vw, 112px) 0 clamp(56px, 9vw, 96px);
+  padding: clamp(36px, 7vw, 72px) 0 clamp(40px, 6vw, 64px);
 }
 
 .hero-grid {
@@ -433,7 +423,7 @@ strong {
 
 .hero-lede {
   max-width: 56ch;
-  margin: 24px 0 32px;
+  margin: 20px 0 28px;
   color: var(--text-muted);
   font-size: clamp(17px, 2vw, 19px);
 }
@@ -496,7 +486,7 @@ strong {
 .stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: clamp(48px, 8vw, 80px);
+  margin-top: clamp(32px, 5vw, 48px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
@@ -550,7 +540,7 @@ strong {
   display: grid;
   grid-template-columns: 180px minmax(0, 1fr);
   gap: 8px 32px;
-  padding: 28px 0;
+  padding: 20px 0;
   border-top: 1px solid var(--border);
 }
 
@@ -571,7 +561,7 @@ strong {
 }
 
 .role-company {
-  margin: 4px 0 14px;
+  margin: 2px 0 10px;
   color: var(--text-muted);
   font-size: 15.5px;
 }
@@ -583,7 +573,7 @@ strong {
 
 .role ul:not(.tags) {
   display: grid;
-  gap: 8px;
+  gap: 4px;
   padding-left: 18px;
   color: var(--text-muted);
 }
@@ -863,7 +853,7 @@ strong {
 }
 
 .contact-card .prose {
-  margin: 14px 0 26px;
+  margin: 10px 0 22px;
 }
 
 .contact-list {
@@ -947,7 +937,7 @@ strong {
    ------------------------------------------------------------------------ */
 
 .project-hero {
-  padding: clamp(36px, 7vw, 72px) 0 clamp(28px, 5vw, 48px);
+  padding: clamp(28px, 5vw, 48px) 0 clamp(24px, 4vw, 36px);
 }
 
 .back-link {
@@ -993,7 +983,7 @@ strong {
 
 .project-hero .lede {
   max-width: 62ch;
-  margin: 18px 0 28px;
+  margin: 14px 0 22px;
   color: var(--text-muted);
   font-size: clamp(17px, 2vw, 19px);
 }
@@ -1002,7 +992,7 @@ strong {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 0;
-  margin: 36px 0 0;
+  margin: 28px 0 0;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
@@ -1050,12 +1040,12 @@ strong {
 .article {
   max-width: 760px;
   margin: 0 auto;
-  padding: 0 var(--gutter) clamp(56px, 9vw, 96px);
+  padding: 0 var(--gutter) clamp(40px, 6vw, 64px);
 }
 
 .article h2 {
-  margin: 56px 0 16px;
-  font-size: 26px;
+  margin: 40px 0 12px;
+  font-size: 24px;
 }
 
 .article h3 {
@@ -1096,7 +1086,7 @@ strong {
 }
 
 .figure {
-  margin: 32px 0;
+  margin: 24px 0;
 }
 
 .figure img {
@@ -1120,7 +1110,7 @@ strong {
 
 .cover {
   max-width: var(--max-width);
-  margin: 0 auto clamp(40px, 6vw, 64px);
+  margin: 0 auto clamp(28px, 4vw, 44px);
   padding: 0 var(--gutter);
 }
 
@@ -1258,8 +1248,8 @@ strong {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-top: 64px;
-  padding: 22px 24px;
+  margin-top: 48px;
+  padding: 18px 22px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);

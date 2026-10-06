@@ -49,9 +49,7 @@
         </a>
         <h1>micro-utils</h1>
         <p class="lede">
-          A collection of portable C++ utility libraries for embedded systems. The libraries don't depend on anything
-          an embedded implementation of the standard library might leave out, and they use
-          <strong>static memory allocation only</strong>.
+          Portable C++ libraries for embedded systems, with no dependencies beyond what an embedded standard library provides and <strong>static memory allocation only</strong>.
         </p>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://github.com/somaveszelovszki/micro-utils" target="_blank"
@@ -86,50 +84,30 @@
     </section>
 
     <article class="article">
-      <h2>Why it exists</h2>
+      <h2>Overview</h2>
       <p>
-        micro-utils is the shared foundation of the <a href="../babocar/">babocar</a> firmware. Several
-        microcontrollers needed the same building blocks: containers, control loops, sensor filtering, hardware
-        drivers and a common communication protocol. Rather than copy that code from project to project, it lives in
-        one library that every firmware project links against and that is tested on its own.
+        The shared foundation of the <a href="../babocar/">babocar</a> firmware. Every container has a fixed
+        capacity known at compile time, so there are no heap allocations or fragmentation. Built on the
+        <a href="https://www.etlcpp.com" target="_blank" rel="noopener">Embedded Template Library</a>.
       </p>
       <p>
-        Microcontroller firmware can't afford heap fragmentation or surprise allocations, so every container has a
-        fixed capacity known at compile time. The library builds on the
-        <a href="https://www.etlcpp.com" target="_blank" rel="noopener">Embedded Template Library</a> and uses
-        <code>tiny-json</code> for parsing.
-      </p>
-
-      <h2>Hardware abstraction</h2>
-      <p>
-        The <code>port</code> layer hides the hardware and the operating system behind one interface. It has
-        implementations for the <strong>STM32 HAL</strong> and <strong>FreeRTOS</strong>, plus
-        <strong>mock</strong> versions of both. The same control and sensor code runs on the car and in unit tests
-        on a laptop, where it can be tested quickly and deterministically.
+        The <code>port</code> layer hides hardware and OS behind one interface, with <strong>STM32 HAL</strong>,
+        <strong>FreeRTOS</strong> and <strong>mock</strong> implementations. The same control code runs on the car
+        and in <strong>GoogleTest</strong> unit tests on a laptop; hot paths are measured with
+        <strong>Google Benchmark</strong>.
       </p>
 
       <h2>Libraries</h2>
       <ul class="module-grid">
-        <li><code>container</code><br>STL-like containers with static allocation: vector, map, set, ring buffer</li>
-        <li><code>control</code><br>Building blocks for control algorithms: PID controller, ramps, maneuvers</li>
-        <li><code>sensor</code><br>Sensor data filtering and fusion, including a Madgwick AHRS filter</li>
-        <li><code>hw</code><br>Drivers for DC and servo motors, encoders, IMUs, distance sensors and LCDs</li>
-        <li><code>port</code><br>Device-independent hardware and operating system abstraction layer</li>
-        <li><code>panel</code><br>Communication protocols and shared data structures used across units</li>
-        <li><code>math</code><br>Math helpers: linear algebra, numerics, random number generation</li>
-        <li><code>debug</code> · <code>log</code><br>Debugging and logging tools for embedded targets</li>
-        <li><code>format</code> · <code>json</code><br>String formatting and JSON handling without dynamic memory</li>
-        <li><code>sim</code><br>Simulators, such as a motor model, for testing</li>
-        <li><code>test</code><br>Unit testing utilities</li>
-        <li><code>utils</code><br>Low-level utility classes and functions</li>
+        <li><code>container</code><br>vector, map, set, ring buffer with static allocation</li>
+        <li><code>control</code><br>PID controller, ramps, maneuvers</li>
+        <li><code>sensor</code><br>Filters and a Madgwick AHRS for sensor fusion</li>
+        <li><code>hw</code><br>Drivers for motors, encoders, IMUs, distance sensors, LCDs</li>
+        <li><code>port</code><br>Hardware and OS abstraction layer</li>
+        <li><code>panel</code><br>Protocols shared between the car's units</li>
+        <li><code>math</code><br>Linear algebra and numeric helpers</li>
+        <li><code>more</code><br>debug, log, format, json, sim, test, utils</li>
       </ul>
-
-      <h2>Testing &amp; performance</h2>
-      <p>
-        Unit tests use <strong>GoogleTest</strong> and are enabled with <code>BUILD_TESTS</code>. Performance-critical
-        code is measured with <strong>Google Benchmark</strong>, enabled with <code>BUILD_BENCHMARKS</code>. Both run
-        on the host machine, thanks to the mock port layer.
-      </p>
 
       <a class="next-project" href="../mondrian-in-random/">
         <span>
