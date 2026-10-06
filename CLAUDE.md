@@ -27,7 +27,6 @@ Experience, dates and skills mirror the resume PDF; project descriptions are dra
 
 `index.js` (vanilla JS, no dependencies) wires behavior by data attribute:
 
-- `data-years-since="<date>"` — replaces text with whole years elapsed (used for years of experience; the static fallback text should stay roughly correct).
 - `data-current-year` — footer copyright year.
 - `data-youtube-id` on a `button.video` — click-to-load YouTube embed (no third-party requests until clicked).
 - `data-anagram` — the MONDRIAN → INRANDOM tile animation on the Mondrian page; each `.anagram-tile`'s `data-target` is its index in the rearranged word.

@@ -7,19 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', update, { passive: true });
     }
 
-    // <span data-years-since="2017-07-01">9</span> -> whole years elapsed since the date.
-    document.querySelectorAll('[data-years-since]').forEach((el) => {
-        const since = new Date(el.dataset.yearsSince);
-        const now = new Date();
-        let years = now.getFullYear() - since.getFullYear();
-        if (now.getMonth() < since.getMonth() || (now.getMonth() === since.getMonth() && now.getDate() < since.getDate())) {
-            years--;
-        }
-        if (!Number.isNaN(years)) {
-            el.textContent = years;
-        }
-    });
-
     document.querySelectorAll('[data-current-year]').forEach((el) => {
         el.textContent = new Date().getFullYear();
     });
