@@ -37,6 +37,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
+    // Email links also copy the address, for visitors without a mail app set up.
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    document.body.append(toast);
+    let toastTimer;
+
+    const showToast = (message) => {
+        toast.textContent = message;
+        toast.classList.add('visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('visible'), 2500);
+    };
+
+    const copyText = async (text) => {
+        try {
+            await navigator.clipboard.writeText(text);
+            return true;
+        } catch {
+            const field = document.createElement('textarea');
+            field.value = text;
+            field.setAttribute('readonly', '');
+            field.style.cssText = 'position:fixed;opacity:0';
+            document.body.append(field);
+            field.select();
+            const copied = document.execCommand('copy');
+            field.remove();
+            return copied;
+        }
+    };
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+        link.addEventListener('click', async () => {
+            const address = link.getAttribute('href').slice('mailto:'.length).split('?')[0];
+            if (await copyText(address)) {
+                showToast(`Email copied: ${address}`);
+            }
+        });
+    });
+
     document.querySelectorAll('[data-current-year]').forEach((el) => {
         el.textContent = new Date().getFullYear();
     });
