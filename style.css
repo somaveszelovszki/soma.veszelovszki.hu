@@ -574,6 +574,11 @@ strong {
   color: var(--text-muted);
 }
 
+.role li strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .role li::marker {
   color: var(--text-faint);
 }
