@@ -24,14 +24,14 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="../" aria-label="Soma Veszelovszki, home">
+      <a class="brand" href="../index.html" aria-label="Soma Veszelovszki, home">
         <span class="brand-mark">SV</span>
         <span class="brand-name">Soma Veszelovszki</span>
       </a>
       <nav class="nav" aria-label="Main">
-        <a href="../#experience" class="nav-hide-sm">Experience</a>
-        <a href="../#projects">Projects</a>
-        <a href="../#contact">Contact</a>
+        <a href="../index.html#experience" class="nav-hide-sm">Experience</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
         <a class="btn btn-sm" href="../resources/SomaVeszelovszki_resume.pdf" target="_blank" rel="noopener">Resume</a>
       </nav>
     </div>
@@ -40,7 +40,7 @@
   <main>
     <section class="project-hero">
       <div class="container">
-        <a class="back-link" href="../#projects">
+        <a class="back-link" href="../index.html#projects">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round" aria-hidden="true">
             <path d="m12 19-7-7 7-7" />
@@ -64,7 +64,6 @@
             </svg>
             View on GitHub
           </a>
-          <a class="btn" href="privacy-policy.html">Privacy policy</a>
         </div>
 
         <dl class="facts">
@@ -107,33 +106,21 @@
       </p>
 
       <h2>Fun fact</h2>
-      <p><strong>Mondrian</strong> is an anagram of <strong>in random</strong>. See for yourself:</p>
-      <div class="anagram" data-anagram>
-        <div class="anagram-tiles" aria-hidden="true">
-          <span class="anagram-tile" data-target="7">M</span>
-          <span class="anagram-tile" data-target="6">O</span>
-          <span class="anagram-tile" data-target="1">N</span>
-          <span class="anagram-tile" data-target="5">D</span>
-          <span class="anagram-tile" data-target="2">R</span>
-          <span class="anagram-tile" data-target="0">I</span>
-          <span class="anagram-tile" data-target="3">A</span>
-          <span class="anagram-tile" data-target="4">N</span>
+      <p><strong>Mondrian</strong> is an anagram of <strong>in random</strong>. Can you rearrange the letters?</p>
+      <div class="anagram" data-anagram="INRANDOM">
+        <div class="anagram-tiles" aria-label="Letter tiles">
+          <button class="anagram-tile red" type="button">M</button>
+          <button class="anagram-tile white" type="button">O</button>
+          <button class="anagram-tile yellow" type="button">N</button>
+          <button class="anagram-tile white" type="button">D</button>
+          <button class="anagram-tile blue" type="button">R</button>
+          <button class="anagram-tile white" type="button">I</button>
+          <button class="anagram-tile yellow" type="button">A</button>
+          <button class="anagram-tile red" type="button">N</button>
         </div>
-        <span class="visually-hidden" aria-live="polite">MONDRIAN</span>
-        <button class="btn btn-sm" type="button"><span>Rearrange the letters</span></button>
+        <p class="anagram-status" aria-live="polite">Drag the letters, or tap two to swap them.</p>
+        <button class="btn btn-sm anagram-reset" type="button" hidden>Play again</button>
       </div>
-
-      <a class="next-project" href="../babocar/">
-        <span>
-          <small>Next project</small>
-          <strong>babocar</strong>
-        </span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" aria-hidden="true">
-          <path d="M5 12h14" />
-          <path d="m12 5 7 7-7 7" />
-        </svg>
-      </a>
     </article>
   </main>
 
@@ -141,8 +128,8 @@
     <div class="container">
       <span>© <span data-current-year>2026</span> Soma Veszelovszki</span>
       <span class="footer-links">
-        <a href="../">Home</a>
-        <a href="../#contact">Contact</a>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#contact">Contact</a>
       </span>
     </div>
   </footer>

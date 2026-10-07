@@ -11,9 +11,9 @@
   --text-faint: #8a8a94;
   --border: #e7e7e3;
   --border-strong: #d6d6d0;
-  --accent: #8a2433;
-  --accent-hover: #6f1c28;
-  --accent-soft: #f6e9eb;
+  --accent: #2c5f73;
+  --accent-hover: #234d5e;
+  --accent-soft: #e5eff2;
   --accent-contrast: #ffffff;
   --shadow: 0 1px 2px rgb(20 20 30 / 0.03);
   --shadow-hover: 0 1px 2px rgb(20 20 30 / 0.04), 0 12px 28px -18px rgb(20 20 30 / 0.18);
@@ -198,6 +198,11 @@ strong {
   color: var(--text);
   background: var(--surface-2);
   text-decoration: none;
+}
+
+.nav a.active {
+  color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .nav .nav-hide-sm {
@@ -1243,49 +1248,6 @@ strong {
   }
 }
 
-.next-project {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 48px;
-  padding: 18px 22px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-  color: var(--text);
-  transition: border-color 0.15s, transform 0.15s;
-}
-
-.next-project:hover {
-  border-color: var(--border-strong);
-  color: var(--text);
-  text-decoration: none;
-  transform: translateY(-2px);
-}
-
-.next-project small {
-  display: block;
-  color: var(--text-faint);
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-}
-
-.next-project strong {
-  font-size: 18px;
-}
-
-.next-project svg {
-  width: 20px;
-  height: 20px;
-  color: var(--text-faint);
-}
-
-.store-badge img {
-  height: 48px;
-  width: auto;
-}
-
 /* ---------------------------------------------------------------------------
    Mondrian anagram
    ------------------------------------------------------------------------ */
@@ -1311,24 +1273,65 @@ strong {
 .anagram-tile {
   display: grid;
   place-items: center;
-  width: clamp(30px, 8vw, 46px);
-  height: clamp(36px, 9.5vw, 54px);
+  width: clamp(32px, 8vw, 46px);
+  height: clamp(38px, 9.5vw, 54px);
+  padding: 0;
   border: 3px solid #111;
+  border-radius: 0;
+  background: #fff;
+  color: #111;
   font-family: var(--font-mono);
   font-size: clamp(16px, 4vw, 22px);
   font-weight: 700;
-  color: #111;
-  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: transform 0.2s ease, box-shadow 0.15s ease;
 }
 
-.anagram-tile:nth-child(1) { background: #e63027; color: #fff; }
-.anagram-tile:nth-child(2) { background: #ffffff; }
-.anagram-tile:nth-child(3) { background: #f7d117; }
-.anagram-tile:nth-child(4) { background: #ffffff; }
-.anagram-tile:nth-child(5) { background: #1e4fbf; color: #fff; }
-.anagram-tile:nth-child(6) { background: #ffffff; }
-.anagram-tile:nth-child(7) { background: #f7d117; }
-.anagram-tile:nth-child(8) { background: #e63027; color: #fff; }
+.anagram-tile.red { background: #e63027; color: #fff; }
+.anagram-tile.yellow { background: #f7d117; }
+.anagram-tile.blue { background: #1e4fbf; color: #fff; }
+
+.anagram-tile.selected {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 0 -2px var(--accent);
+}
+
+.anagram-tile.dragging {
+  position: relative;
+  z-index: 1;
+  cursor: grabbing;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.2);
+  transition: none;
+}
+
+.anagram-status {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 15px;
+  text-align: center;
+}
+
+.anagram.solved .anagram-status {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.anagram.solved .anagram-tile {
+  cursor: default;
+  animation: tile-hop 0.5s ease calc(var(--i) * 60ms) both;
+}
+
+@keyframes tile-hop {
+  40% { transform: translateY(-14px) rotate(-6deg); }
+  70% { transform: translateY(2px); }
+}
+
+.anagram-reset[hidden] {
+  display: none;
+}
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -1340,42 +1343,4 @@ strong {
   *::after {
     transition-duration: 0.01ms !important;
   }
-}
-
-/* ---------------------------------------------------------------------------
-   Plain document pages (privacy policy)
-   ------------------------------------------------------------------------ */
-
-.doc {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: clamp(36px, 7vw, 72px) var(--gutter) clamp(56px, 9vw, 96px);
-}
-
-.doc h1 {
-  margin-bottom: 8px;
-  font-size: clamp(30px, 5vw, 40px);
-}
-
-.doc .meta {
-  margin-bottom: 36px;
-  color: var(--text-faint);
-  font-size: 15px;
-}
-
-.doc h2 {
-  margin: 36px 0 10px;
-  font-size: 20px;
-}
-
-.doc p,
-.doc li {
-  color: var(--text-muted);
-}
-
-.doc ul {
-  display: grid;
-  gap: 4px;
-  margin: 0 0 1em;
-  padding-left: 22px;
 }

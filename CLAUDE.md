@@ -11,7 +11,7 @@ There is no build system, package manager, linter, or test suite — it is plain
 ## Structure
 
 - `index.html` — the single-page profile: hero, about + skills, experience, projects, contact.
-- One directory per project case study (`babocar/`, `micro-utils/`, `mondrian-in-random/`), each with its own `index.html`. `mondrian-in-random/privacy-policy.html` is the app's store privacy policy — its legal text must not be reworded.
+- One directory per project case study (`babocar/`, `micro-utils/`, `mondrian-in-random/`), each with its own `index.html`. Internal links point at `…/index.html` explicitly (not bare folders) so the site also works when opened straight from disk.
 - `style.css` and `index.js` at the root are shared by every page; subpages reference them (and `resources/`) via `../` relative paths.
 - `resources/img/` holds locally hosted, resized images (don't hotlink GitHub raw files); `resources/SomaVeszelovszki_resume.pdf` is the resume linked from every page.
 
@@ -21,7 +21,7 @@ Experience, dates and skills mirror the resume PDF; project descriptions are dra
 
 ## Page conventions
 
-- Every page repeats the same `<head>` (Inter + JetBrains Mono from Google Fonts, `style.css`, deferred `index.js`, SVG favicon) and the same sticky `.site-header`. To add a project page, copy an existing subpage (`project-hero`, `.facts`, `.cover`, `.article`, `.next-project`) and add a `.card` to the projects grid in `index.html`.
+- Every page repeats the same `<head>` (Inter + JetBrains Mono from Google Fonts, `style.css`, deferred `index.js`, SVG favicon) and the same sticky `.site-header`. To add a project page, copy an existing subpage (`project-hero`, `.facts`, `.cover`, `.article`) and add a `.card` to the projects grid in `index.html`.
 - The site is light-theme only (matte off-white background, flat surfaces, minimal shadows) by design; don't add a dark mode. Colors and shadows are CSS custom properties on `:root`; use the tokens rather than literal colors. Layout must stay free of horizontal scroll at 390px width.
 - Icons are inline SVGs (no icon font).
 
@@ -29,4 +29,5 @@ Experience, dates and skills mirror the resume PDF; project descriptions are dra
 
 - `data-current-year` — footer copyright year.
 - `data-youtube-id` on a `button.video` — click-to-load YouTube embed (no third-party requests until clicked).
-- `data-anagram` — the MONDRIAN → INRANDOM tile animation on the Mondrian page; each `.anagram-tile`'s `data-target` is its index in the rearranged word.
+- `data-anagram="WORD"` — the letter puzzle on the Mondrian page: tiles can be dragged or tapped two-at-a-time to swap, and the page detects when they spell `WORD`. Tile colors are classes (`red`, `yellow`, `blue`), not positional, so they follow the tile.
+- Header nav links to `#section` anchors get an `.active` class for the section currently in view.
