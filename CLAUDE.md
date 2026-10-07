@@ -11,7 +11,7 @@ There is no build system, package manager, linter, or test suite — it is plain
 ## Structure
 
 - `index.html` — the single-page profile: hero, about + skills, experience, projects, contact.
-- One directory per project case study (`babocar/`, `micro-utils/`, `mondrian-in-random/`), each with its own `index.html`. Internal links point at `…/index.html` explicitly (not bare folders) so the site also works when opened straight from disk.
+- One directory per project case study (`babocar/`, `micro-utils/`, `mondrian-in-random/`), each with its own `index.html`. Internal links use bare folder paths (`babocar/`, `../`) for clean URLs; GitHub Pages serves each folder's `index.html`, so preview over HTTP rather than opening files from disk.
 - `style.css` and `index.js` at the root are shared by every page; subpages reference them (and `resources/`) via `../` relative paths.
 - `resources/img/` holds locally hosted, resized images (don't hotlink GitHub raw files); `resources/SomaVeszelovszki_resume.pdf` is the resume linked from every page.
 
