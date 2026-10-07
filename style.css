@@ -487,49 +487,66 @@ strong {
    Experience
    ------------------------------------------------------------------------ */
 
+/* The timeline is one grid shared by all entries (roles use display: contents), so
+   the date column is as wide as the longest date and never wraps. The line and
+   dots hang off the left edge of each entry's content cell. */
 .timeline {
-  --rail: 199px; /* x position of the vertical line */
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 52px;
   list-style: none;
 }
 
 .role {
+  display: contents;
+}
+
+.role-period {
+  padding-bottom: 32px;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  line-height: 1.9;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.role > div:last-child {
   position: relative;
-  display: grid;
-  grid-template-columns: 174px minmax(0, 1fr);
-  gap: 4px 50px;
   padding-bottom: 32px;
 }
 
+.role:last-child > *,
+.role:last-child > div:last-child {
+  padding-bottom: 0;
+}
+
 /* Vertical line, running from the first dot to the last one. */
-.role::before {
+.role > div:last-child::before {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  left: calc(var(--rail) - 1px);
+  left: -27px;
   width: 2px;
   background: var(--border);
 }
 
-.role:first-child::before {
+.role:first-child > div:last-child::before {
   top: 10px;
 }
 
-.role:last-child {
-  padding-bottom: 0;
-}
-
-.role:last-child::before {
+.role:last-child > div:last-child::before {
   bottom: auto;
   height: 10px;
 }
 
 /* Dot for each entry; the current role is filled. */
-.role::after {
+.role > div:last-child::after {
   content: "";
   position: absolute;
   top: 4px;
-  left: calc(var(--rail) - 7px);
+  left: -33px;
   width: 14px;
   height: 14px;
   border: 2px solid var(--border-strong);
@@ -537,19 +554,10 @@ strong {
   background: var(--bg);
 }
 
-.role:first-child::after {
+.role:first-child > div:last-child::after {
   border-color: var(--accent);
   background: var(--accent);
   box-shadow: 0 0 0 4px var(--accent-soft);
-}
-
-.role-period {
-  color: var(--text-faint);
-  font-family: var(--font-mono);
-  font-size: 13.5px;
-  line-height: 1.9;
-  text-align: right;
-  white-space: nowrap;
 }
 
 .role-title {
@@ -589,16 +597,46 @@ strong {
 
 @media (max-width: 640px) {
   .timeline {
-    --rail: 7px;
-  }
-
-  .role {
     grid-template-columns: minmax(0, 1fr);
     padding-left: 32px;
   }
 
   .role-period {
+    position: relative;
+    padding-bottom: 2px;
     text-align: left;
+  }
+
+  /* On phones the date sits above each entry, so the line also runs past it. */
+  .role-period::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -27px;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .role:first-child > .role-period::before {
+    top: 10px;
+  }
+
+  .role > div:last-child::after {
+    top: -22px;
+  }
+
+  .role:first-child > div:last-child::before {
+    top: 0;
+  }
+
+  .role:last-child > .role-period::before {
+    bottom: auto;
+    height: 14px;
+  }
+
+  .role:last-child > div:last-child::before {
+    display: none;
   }
 }
 
