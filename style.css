@@ -488,51 +488,6 @@ strong {
   }
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: clamp(32px, 5vw, 48px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-.stat {
-  padding: 22px 24px;
-}
-
-.stat + .stat {
-  border-left: 1px solid var(--border);
-}
-
-.stat-value {
-  display: block;
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-}
-
-.stat-label {
-  display: block;
-  margin-top: 4px;
-  color: var(--text-muted);
-  font-size: 14.5px;
-  line-height: 1.45;
-}
-
-@media (max-width: 640px) {
-  .stats {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .stat + .stat {
-    border-left: 0;
-    border-top: 1px solid var(--border);
-  }
-}
-
 /* ---------------------------------------------------------------------------
    Experience
    ------------------------------------------------------------------------ */
