@@ -488,20 +488,59 @@ strong {
    ------------------------------------------------------------------------ */
 
 .timeline {
+  --rail: 199px; /* x position of the vertical line */
   list-style: none;
 }
 
 .role {
+  position: relative;
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 8px 32px;
-  padding: 20px 0;
-  border-top: 1px solid var(--border);
+  grid-template-columns: 174px minmax(0, 1fr);
+  gap: 4px 50px;
+  padding-bottom: 32px;
 }
 
-.role:first-child {
-  padding-top: 0;
-  border-top: 0;
+/* Vertical line, running from the first dot to the last one. */
+.role::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--rail) - 1px);
+  width: 2px;
+  background: var(--border);
+}
+
+.role:first-child::before {
+  top: 10px;
+}
+
+.role:last-child {
+  padding-bottom: 0;
+}
+
+.role:last-child::before {
+  bottom: auto;
+  height: 10px;
+}
+
+/* Dot for each entry; the current role is filled. */
+.role::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: calc(var(--rail) - 7px);
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--border-strong);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.role:first-child::after {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
 .role-period {
@@ -509,6 +548,8 @@ strong {
   font-family: var(--font-mono);
   font-size: 13.5px;
   line-height: 1.9;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .role-title {
@@ -542,8 +583,17 @@ strong {
 }
 
 @media (max-width: 640px) {
+  .timeline {
+    --rail: 7px;
+  }
+
   .role {
     grid-template-columns: minmax(0, 1fr);
+    padding-left: 32px;
+  }
+
+  .role-period {
+    text-align: left;
   }
 }
 

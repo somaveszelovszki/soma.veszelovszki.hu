@@ -90,6 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
             iframe.title = button.getAttribute('aria-label') || 'YouTube video';
             iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
             iframe.allowFullscreen = true;
+            // YouTube refuses to play (error 153) without a Referer identifying the embedding site.
+            iframe.referrerPolicy = 'strict-origin-when-cross-origin';
             button.replaceChildren(iframe);
             button.removeAttribute('aria-label');
         }, { once: true });
