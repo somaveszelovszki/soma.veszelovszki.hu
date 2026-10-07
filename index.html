@@ -30,9 +30,19 @@
         <span class="brand-mark">SV</span>
         <span class="brand-name">Soma Veszelovszki</span>
       </a>
-      <nav class="nav" aria-label="Main">
-        <a href="#about" class="nav-hide-sm">About me</a>
-        <a href="#experience" class="nav-hide-sm">Experience</a>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          aria-hidden="true">
+          <path d="M6 6l12 12M18 6 6 18" />
+        </svg>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="#about">About me</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
         <a class="btn btn-sm" href="resources/SomaVeszelovszki_resume.pdf" target="_blank" rel="noopener">Resume</a>
@@ -46,9 +56,15 @@
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
-          <div>
+          <div class="hero-text">
             <p class="eyebrow">Senior Full-Stack Engineer · Budapest, Hungary</p>
-            <h1>Hi, I'm Soma. <span class="muted">I build software, from firmware to full-stack.</span></h1>
+            <h1>
+              <span class="visually-hidden">Hi, I'm Soma. I build software, APIs, microservices, embedded systems, web apps, developer tools and libraries.</span>
+              <span aria-hidden="true" data-typewriter="software, APIs, microservices, embedded systems, web apps, developer tools, libraries">
+                <span class="line">Hi, I'm Soma.</span>
+                <span class="line muted">I build <span data-typewriter-word>software.</span><span class="caret"></span></span>
+              </span>
+            </h1>
             <p class="hero-lede">
               10 years of building products and infrastructure in autonomous driving, options trading and
               manufacturing software, mostly in TypeScript and C++.
@@ -99,7 +115,7 @@
     </section>
 
     <!-- About -->
-    <section class="section" id="about">
+    <section class="section section-alt" id="about">
       <div class="container split">
         <div>
           <h2 class="section-title">About me</h2>
@@ -253,7 +269,7 @@
     </section>
 
     <!-- Projects -->
-    <section class="section" id="projects">
+    <section class="section section-alt" id="projects">
       <div class="container">
         <div class="section-head">
           <div>

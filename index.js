@@ -7,6 +7,84 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', update, { passive: true });
     }
 
+    // Hamburger menu on small screens; closes on link click, Escape, or a click outside.
+    const navToggle = document.querySelector('.nav-toggle');
+    if (header && navToggle) {
+        const setOpen = (open) => {
+            header.classList.toggle('nav-open', open);
+            navToggle.setAttribute('aria-expanded', String(open));
+            navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+        };
+        navToggle.addEventListener('click', () => setOpen(!header.classList.contains('nav-open')));
+        header.querySelectorAll('.nav a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && header.classList.contains('nav-open')) {
+                setOpen(false);
+                navToggle.focus();
+            }
+        });
+        document.addEventListener('click', (event) => {
+            if (!header.contains(event.target)) setOpen(false);
+        });
+        window.matchMedia('(min-width: 641px)').addEventListener('change', () => setOpen(false));
+    }
+
+    // Typewriter heading: types the lines once, then keeps swapping the last word.
+    // <span data-typewriter="word, word, ..."> with a [data-typewriter-word] span and a .caret inside.
+    document.querySelectorAll('[data-typewriter]').forEach((root) => {
+        // Each word is typed as a full sentence ending, period included.
+        const words = root.dataset.typewriter.split(',').map((word) => word.trim()).filter(Boolean).map((word) => `${word}.`);
+        const target = root.querySelector('[data-typewriter-word]');
+        const caret = root.querySelector('.caret');
+        if (!target || words.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+        const jitter = (ms) => ms * (0.6 + Math.random() * 0.8);
+
+        // Text nodes in order (the cycling word last), with their full text, emptied for typing.
+        const nodes = [];
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        while (walker.nextNode()) {
+            if (walker.currentNode.textContent.trim()) nodes.push(walker.currentNode);
+        }
+        const full = nodes.map((node) => node.textContent.replace(/^\s+/, ''));
+        nodes.forEach((node) => { node.textContent = ''; });
+
+        const type = async (node, text) => {
+            for (const char of text) {
+                node.parentNode.insertBefore(caret, node.nextSibling);
+                node.textContent += char;
+                await sleep(jitter(70));
+            }
+        };
+
+        const run = async () => {
+            root.classList.add('typing');
+            await sleep(400);
+            for (const [i, node] of nodes.entries()) {
+                await type(node, full[i]);
+                if (i === 0) await sleep(350);
+            }
+            target.after(caret);
+            const wordNode = target.firstChild;
+            for (let i = 0; ; i = (i + 1) % words.length) {
+                root.classList.remove('typing');
+                await sleep(2200);
+                root.classList.add('typing');
+                while (wordNode.textContent) {
+                    wordNode.textContent = wordNode.textContent.slice(0, -1);
+                    await sleep(jitter(45));
+                }
+                await sleep(300);
+                for (const char of words[(i + 1) % words.length]) {
+                    wordNode.textContent += char;
+                    await sleep(jitter(70));
+                }
+            }
+        };
+        run();
+    });
+
     // Highlights the header link of the section currently in view.
     const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
     const spied = navLinks
