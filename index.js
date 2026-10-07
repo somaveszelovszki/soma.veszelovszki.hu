@@ -160,21 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
         el.textContent = new Date().getFullYear();
     });
 
-    // Click-to-load YouTube embeds: <button class="video" data-youtube-id="...">
-    document.querySelectorAll('[data-youtube-id]').forEach((button) => {
-        button.addEventListener('click', () => {
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube-nocookie.com/embed/${button.dataset.youtubeId}?autoplay=1&rel=0`;
-            iframe.title = button.getAttribute('aria-label') || 'YouTube video';
-            iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
-            iframe.allowFullscreen = true;
-            // YouTube refuses to play (error 153) without a Referer identifying the embedding site.
-            iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-            button.replaceChildren(iframe);
-            button.removeAttribute('aria-label');
-        }, { once: true });
-    });
-
     // MONDRIAN -> INRANDOM puzzle: drag tiles (or tap two to swap) until they spell the target word.
     document.querySelectorAll('[data-anagram]').forEach((anagram) => {
         const row = anagram.querySelector('.anagram-tiles');

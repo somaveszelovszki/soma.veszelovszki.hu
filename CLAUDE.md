@@ -24,10 +24,10 @@ Experience, dates and skills mirror the resume PDF; project descriptions are dra
 - Every page repeats the same `<head>` (Inter + JetBrains Mono from Google Fonts, `style.css`, deferred `index.js`, SVG favicon) and the same sticky `.site-header`. To add a project page, copy an existing subpage (`project-hero`, `.facts`, `.cover`, `.article`) and add a `.card` to the projects grid in `index.html`.
 - The site is light-theme only (matte off-white background, flat surfaces, minimal shadows) by design; don't add a dark mode. Colors and shadows are CSS custom properties on `:root`; use the tokens rather than literal colors. Layout must stay free of horizontal scroll at 390px width.
 - Icons are inline SVGs (no icon font).
+- Videos are an `a.video` poster image with a play button linking to YouTube in a new tab — not an iframe embed, so no third-party requests, cookies or sign-in prompts.
 
 `index.js` (vanilla JS, no dependencies) wires behavior by data attribute:
 
 - `data-current-year` — footer copyright year.
-- `data-youtube-id` on a `button.video` — click-to-load YouTube embed (no third-party requests until clicked).
 - `data-anagram="WORD"` — the letter puzzle on the Mondrian page: tiles can be dragged or tapped two-at-a-time to swap, and the page detects when they spell `WORD`. Tile colors are classes (`red`, `yellow`, `blue`), not positional, so they follow the tile.
 - Header nav links to `#section` anchors get an `.active` class for the section currently in view.
